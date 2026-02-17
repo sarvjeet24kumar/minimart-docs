@@ -669,6 +669,12 @@
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
+<td>View single tenant (with counts)</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
 <td>Update tenant details (name, slug)</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
@@ -684,12 +690,6 @@
 <td>Soft-delete tenant</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
-<td style="text-align: center;">No</td>
-</tr>
-<tr>
-<td>View organization metrics (counts)</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
@@ -712,7 +712,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Create admin for any tenant</td>
+<td>Create Tenant Admin (any tenant)</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">No</td>
@@ -724,16 +724,16 @@
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>List all users in tenant</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
+<td>List users</td>
+<td style="text-align: center;">Yes (Tenant Admins only)</td>
+<td style="text-align: center;">Yes (own tenant)</td>
+<td style="text-align: center;">Yes (own tenant, active only)</td>
 </tr>
 <tr>
 <td>View any user in tenant</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes (Tenant Admins only)</td>
+<td style="text-align: center;">Yes (own tenant)</td>
+<td style="text-align: center;">Yes (own tenant, active only)</td>
 </tr>
 <tr>
 <td>View own profile</td>
@@ -742,15 +742,9 @@
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
-<td>Update any admin in any tenant</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">No</td>
-</tr>
-<tr>
-<td>Update any user in tenant</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
+<td>Update any user</td>
+<td style="text-align: center;">Yes (Tenant Admins only)</td>
+<td style="text-align: center;">Yes (own tenant)</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
@@ -760,29 +754,23 @@
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
-<td>Delete any tenant admin</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">No</td>
-</tr>
-<tr>
-<td>Delete any user in tenant</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
+<td>Deactivate any user (soft delete)</td>
+<td style="text-align: center;">Yes (not self)</td>
+<td style="text-align: center;">Yes (own tenant, not self)</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Delete own account</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">No</td>
+<td>Deactivate own account</td>
+<td style="text-align: center;">No (admins blocked)</td>
+<td style="text-align: center;">No (admins blocked)</td>
 <td style="text-align: center;">Yes</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Key Rules:</strong>
-- <strong>Super Admin</strong>: Manages the tenant ecosystem and tenant admins; restricted from private organization data.
-- <strong>Tenant Admin</strong>: Full oversight of users and content within their organization. Cannot modify other administrators.
-- <strong>User</strong>: Collaborative role; restricted to their own shared resources.</p>
+- <strong>Super Admin</strong>: Manages the tenant ecosystem and tenant admins; can only see Tenant Admin accounts, not regular users. Restricted from private shopping list data.
+- <strong>Tenant Admin</strong>: Full oversight of users and content within their organization. Cannot deactivate themselves.
+- <strong>User</strong>: Collaborative role; can only update/deactivate their own account. Cannot modify own <code>is_active</code> or <code>deleted_at</code> via update.</p>
 <h4 id="shopping-list-management">Shopping List Management</h4>
 <table>
 <thead>
@@ -803,39 +791,74 @@
 <td style="text-align: center;">—</td>
 </tr>
 <tr>
-<td>View organization lists</td>
+<td>View all org lists (incl. deleted via <code>include_archived</code>)</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes (if member)</td>
-</tr>
-<tr>
-<td>Update list name/settings</td>
 <td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Delete shopping list</td>
+<td>View own lists</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>View single list detail</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>Update list name</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Invite members to list</td>
+<td>Restore deleted list (<code>deleted_at → null</code>)</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Soft-delete list</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>View deleted lists</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No (404)</td>
+<td style="text-align: center;">No (404)</td>
+</tr>
+<tr>
+<td>View members</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>View deleted members (<code>include_deleted</code>)</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
 </tr>
 <tr>
 <td>Remove member from list</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No (self-leave)</td>
+<td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Update member permissions</td>
@@ -844,19 +867,13 @@
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">No</td>
 </tr>
-<tr>
-<td>Restore deleted list</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
-</tr>
 </tbody>
 </table>
 <p><strong>Key Rules:</strong>
-- <strong>Tenant Admin</strong>: Has elevated (override) access to all lists within their specific organization.
-- <strong>List Owner</strong>: The creator of the list; possesses full control over list membership and settings.
-- <strong>Members</strong>: Can only manage their own participation (leave) unless granted specific flags.</p>
+- <strong>Tenant Admin</strong>: Has elevated (override) access to all lists within their organization. Only role that can restore deleted lists and view deleted lists.
+- <strong>List Owner</strong>: Full control over list membership, settings, and deletion. Cannot restore deleted lists.
+- <strong>Members</strong>: Can only view the list and its members. Cannot modify list settings or manage other members.
+- <strong>Owner cannot be removed</strong> or have their permissions modified.</p>
 <h4 id="item-management">Item Management</h4>
 <table>
 <thead>
@@ -871,11 +888,19 @@
 </thead>
 <tbody>
 <tr>
+<td>View items</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes (<code>can_view</code>)</td>
+<td style="text-align: center;">Yes (<code>can_view</code>)</td>
+</tr>
+<tr>
 <td>Add item to list</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes (<code>can_add</code>)</td>
+<td style="text-align: center;">Yes (<code>can_add_item</code>)</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
@@ -883,7 +908,7 @@
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes (<code>can_update</code>)</td>
+<td style="text-align: center;">Yes (<code>can_update_item</code>)</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
@@ -891,31 +916,25 @@
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes (<code>can_update</code>)</td>
+<td style="text-align: center;">Yes (<code>can_update_item</code>)</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Delete item</td>
+<td>Delete item (soft)</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes (<code>can_delete</code>)</td>
-<td style="text-align: center;">No</td>
-</tr>
-<tr>
-<td>Restore deleted item</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">Yes</td>
-<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes (<code>can_delete_item</code>)</td>
 <td style="text-align: center;">No</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Key Permission Flags:</strong>
-- <strong>Can Add Item</strong>: Allows the member to contribute new items to the list.
-- <strong>Can Update Item</strong>: Allows changing quantities, names, or marking items as purchased.
-- <strong>Can Delete Item</strong>: Allows removing items from the collaborative list.</p>
+- <strong>can_view</strong>: Granted to all members by default. Required to view items.
+- <strong>can_add_item</strong>: Allows the member to contribute new items to the list.
+- <strong>can_update_item</strong>: Allows changing quantities, names, or marking items as purchased.
+- <strong>can_delete_item</strong>: Allows soft-deleting items from the list.
+- Purchased items <strong>cannot be updated</strong> (hard block regardless of permissions).</p>
 <h4 id="invitations-access">Invitations &amp; Access</h4>
 <table>
 <thead>
@@ -929,7 +948,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Generate invitation token</td>
+<td>Send invitation</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
@@ -950,7 +969,28 @@
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Accept/Reject invitation</td>
+<td>View list invitations</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>View received invites</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>Accept invitation</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes (Invitee)</td>
+</tr>
+<tr>
+<td>Reject invitation</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">No</td>
@@ -958,6 +998,10 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Key Rules:</strong>
+- Cross-tenant invitations are blocked (token encodes <code>tenant_id</code>).
+- Cannot invite to or accept invites for deleted lists.
+- Duplicate membership and duplicate pending invite checks prevent spam.</p>
 <h4 id="real-time-communication-chat-notifications">Real-Time Communication (Chat &amp; Notifications)</h4>
 <table>
 <thead>
@@ -971,7 +1015,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Join list chat room</td>
+<td>Connect to chat WebSocket</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
@@ -1006,14 +1050,14 @@
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Receive real-time notifications</td>
+<td>Receive real-time list events</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
-<td>Mark notifications as read</td>
+<td>Receive push notifications</td>
 <td style="text-align: center;">No</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
@@ -1021,6 +1065,11 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Key Rules:</strong>
+- Cannot send messages to a deleted list.
+- Membership is re-verified on every message send.
+- Tenant Admin and List Owner can delete any message in the list.
+- Notifications are deduplicated: users already watching a list via WebSocket do not receive duplicate notification popups.</p>
 
 
 
