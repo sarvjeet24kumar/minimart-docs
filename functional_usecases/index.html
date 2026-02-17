@@ -1,0 +1,804 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tenant/">
+      
+      
+        <link rel="next" href="../functional_modules/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Functional Use Cases - Mini Mart</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functional-use-case-documentation-minimart-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mini Mart" class="md-header__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mini Mart
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functional Use Cases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mini Mart" class="md-nav__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mini Mart
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Use Cases
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-1-user-registration-login-tenant-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: User Registration &amp; Login (Tenant Context)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-2-collaborative-shopping-list-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Collaborative Shopping List Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-3-item-tracking-status-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Item Tracking &amp; Status Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-4-real-time-collaborative-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 4: Real-Time Collaborative Chat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-5-organization-administrative-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 5: Organization Administrative Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-6-platform-level-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 6: Platform-Level Supervision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-7-secure-permission-real-time-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 7: Secure Permission &amp; Real-Time Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission Matrix.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Api Reference.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Api Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-1-user-registration-login-tenant-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: User Registration &amp; Login (Tenant Context)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-2-collaborative-shopping-list-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Collaborative Shopping List Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-3-item-tracking-status-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Item Tracking &amp; Status Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-4-real-time-collaborative-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 4: Real-Time Collaborative Chat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-5-organization-administrative-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 5: Organization Administrative Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-6-platform-level-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 6: Platform-Level Supervision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-7-secure-permission-real-time-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 7: Secure Permission &amp; Real-Time Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="functional-use-case-documentation-minimart-system">Functional Use Case Documentation: MiniMart System</h1>
+<hr />
+<h2 id="use-case-1-user-registration-login-tenant-context">Use Case 1: User Registration &amp; Login (Tenant Context)</h2>
+<p><strong>Description:</strong><br />
+Allows a user to create an account within a specific organization (Tenant) and authenticate via secure JWT.</p>
+<p><strong>Steps:</strong>
+- User provides registration details (Email, Username, Password, Name).
+- System validates data (email format, password strength, unique username/email within the specific tenant).
+- System validates that the <code>Tenant-ID</code> provided exists and is active.
+- System stores the user profile linked to the relevant <code>Tenant</code>.
+- System triggers an asynchronous email verification OTP.
+- Upon verification, user logs in and system generates JWT tokens (Access &amp; Refresh).
+- <strong>Security Check:</strong> Middleware validates on every request that the user's <code>Tenant</code> is active and not soft-deleted.</p>
+<p><strong>Post-condition:</strong><br />
+User is registered, verified, and authenticated. All subsequent requests are scoped to their organization.</p>
+<p><strong>Exceptions:</strong>
+- Duplicate username/email for the same tenant.
+- Invalid or inactive Tenant-ID provided in header.
+- Password does not meet security requirements.</p>
+<hr />
+<h2 id="use-case-2-collaborative-shopping-list-management">Use Case 2: Collaborative Shopping List Management</h2>
+<p><strong>Description:</strong><br />
+Allows users to create, share, and collaborate on shared shopping lists with members of their tenant.</p>
+<p><strong>Steps:</strong>
+- User creates a new shopping list (becomes the <code>OWNER</code>).
+- User invites other organization members to the list via Email/User-ID.
+- System generates a secure, stateless invitation token.
+- Invited user accepts the invitation and is added as a <code>MEMBER</code>.
+- <strong>Real-time Sync:</strong> All members are notified of the new list or membership change via WebSockets.</p>
+<p><strong>Post-condition:</strong><br />
+A shared shopping list is established with specific members who can collaborate in real-time.</p>
+<p><strong>Exceptions:</strong>
+- Inviting a user from a different organization (Blocked by Tenant Isolation).
+- Attempting to invite a user who is already a member.
+- Invitation token expired or revoked.</p>
+<hr />
+<h2 id="use-case-3-item-tracking-status-synchronization">Use Case 3: Item Tracking &amp; Status Synchronization</h2>
+<p><strong>Description:</strong><br />
+Allows members of a shopping list to add items and track their purchase status.</p>
+<p><strong>Steps:</strong>
+- Member with <code>can_add_item</code> permission adds a product with name and quantity.
+- System validates the member has sufficient permissions for the specific list.
+- User updates item status between <code>PENDING</code> and <code>PURCHASED</code>.
+- <strong>Real-time Sync:</strong> System broadcasts the change to all connected list subscribers immediately.
+- System updates the <code>updated_at</code> timestamp and tracks the actor (last updated by).</p>
+<p><strong>Post-condition:</strong><br />
+The shopping list state is updated across all member devices simultaneously.</p>
+<p><strong>Exceptions:</strong>
+- Member lacks specific permission for adding/updating items.
+- Item does not exist or has been deleted by another member.</p>
+<hr />
+<h2 id="use-case-4-real-time-collaborative-chat">Use Case 4: Real-Time Collaborative Chat</h2>
+<p><strong>Description:</strong><br />
+Allows list members to communicate in real-time through a dedicated chat room for each shopping list.</p>
+<p><strong>Steps:</strong>
+- User connects to the chat-specific WebSocket endpoint for a list.
+- User sends a message via the WebSocket or REST fallback.
+- System persists the message to the database for history retrieval.
+- System broadcasts the message to all members currently in the list's chat scope.</p>
+<p><strong>Post-condition:</strong><br />
+Instant communication is achieved, with history available for offline members.</p>
+<p><strong>Exceptions:</strong>
+- User is not a member of the list (Connection rejected).
+- Message length exceeds the maximum limit (e.g., 2000 characters).</p>
+<hr />
+<h2 id="use-case-5-organization-administrative-management">Use Case 5: Organization Administrative Management</h2>
+<p><strong>Description:</strong><br />
+Allows tenant administrators to oversee their organization's users and resources.</p>
+<p><strong>Steps:</strong>
+- Admin creates new user accounts for the organization.
+- Admin manages user active/inactive status.
+- Admin oversees all shopping lists within the tenant (Elevated access).
+- Admin modifies list member permissions (Elevated override).</p>
+<p><strong>Post-condition:</strong><br />
+The organization's users and content are managed according to the administrator's actions.</p>
+<p><strong>Exceptions:</strong>
+- Admin attempts to access/manage data from other tenants (Blocked by Tenant Isolation).
+- Admin attempts to delete the primary owner of a list without transferring ownership.</p>
+<hr />
+<h2 id="use-case-6-platform-level-supervision">Use Case 6: Platform-Level Supervision</h2>
+<p><strong>Description:</strong><br />
+Platform-wide control over tenants and global system auditing for Super Admins.</p>
+<p><strong>Steps:</strong>
+- Super Admin creates or updates Tenants (Organizations).
+- Super Admin performs "Soft Delete" on inactive or non-paying tenants.
+- Super Admin manages <code>TENANT_ADMIN</code> accounts globally.
+- System provides cross-tenant health and readiness checks.</p>
+<p><strong>Post-condition:</strong><br />
+The platform ecosystem is maintained, and tenant lifecycles are controlled.</p>
+<p><strong>Exceptions:</strong>
+- Super Admin attempts to access PII (Private member data) within a tenant list (Limited by design).
+- Attempting to reactive a tenant that has been significantly purged.</p>
+<hr />
+<h2 id="use-case-7-secure-permission-real-time-enforcement">Use Case 7: Secure Permission &amp; Real-Time Enforcement</h2>
+<p><strong>Description:</strong><br />
+Ensures all resources are accessed by authenticated users with appropriate roles and tenant context.</p>
+<p><strong>Steps:</strong>
+- <strong>Middleware Check:</strong> Every request validates the JWT, checks for blacklisted tokens, and refreshes Tenant/User status.
+- <strong>RBAC Enforcement:</strong> System checks platform roles (<code>USER</code>, <code>TENANT_ADMIN</code>, <code>SUPER_ADMIN</code>).
+- <strong>ABAC/List Enforcement:</strong> System checks list-level role (<code>OWNER</code>, <code>MEMBER</code>) and granular permission flags (<code>can_add_item</code>, etc.).
+- <strong>WebSocket Security:</strong> System immediately disconnects users from all scopes if their account is deactivated or their membership is revoked.</p>
+<p><strong>Post-condition:</strong><br />
+Absolute security and data isolation are maintained at both REST and WebSocket layers.</p>
+<p><strong>Exceptions:</strong>
+- Access token is revoked (logged out) or expired.
+- User account deactivated during an active session (Immediate kick).
+- Tenant marked as inactive (Immediate block for all organization users).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
