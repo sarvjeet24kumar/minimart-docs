@@ -1,0 +1,1219 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>API Documentation: MiniMart System - Mini Mart</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-documentation-minimart-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mini Mart" class="md-header__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mini Mart
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Documentation: MiniMart System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mini Mart" class="md-nav__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mini Mart
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_usecases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission Matrix.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenant-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tenant Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-roles-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Roles &amp; Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Roles &amp; Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-response-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Response Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Response Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginated-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paginated Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-management-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tenant-management-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tenant Management Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopping-list-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopping List Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-member-invitation-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Member &amp; Invitation Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#item-management-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Item Management Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chat-notification-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat &amp; Notification Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-documentation-minimart-system">API Documentation: MiniMart System</h1>
+<h2 id="overview">Overview</h2>
+<p>MiniMart is a high-performance, multi-tenant shopping list management system built with FastAPI. The API follows RESTful principles, uses JSON for data exchange, and implements JWT for secure, stateless authentication.</p>
+<p><strong>Base URL:</strong> <code>http://localhost:8000/api/v1/</code></p>
+<p><strong>API Version:</strong> v1</p>
+<hr />
+<h2 id="authentication">Authentication</h2>
+<p>MiniMart uses <strong>JWT (JSON Web Token)</strong> authentication. </p>
+<h3 id="authentication-flow">Authentication Flow</h3>
+<ol>
+<li><strong>Signup</strong> → User registers with credentials.</li>
+<li><strong>Email Verification</strong> → User verifies email with OTP sent to their registered address.</li>
+<li><strong>Login</strong> → User provides credentials (email + password) and receives Access &amp; Refresh tokens.</li>
+<li><strong>Token Refresh</strong> → Use the refresh token to obtain a new access token when it expires.</li>
+</ol>
+<h3 id="request-headers">Request Headers</h3>
+<p>Each authenticated request must include the <code>Authorization</code> header:</p>
+<pre><code class="language-http">Authorization: Bearer &lt;access_token&gt;
+</code></pre>
+<hr />
+<h2 id="multi-tenancy">Multi-Tenancy</h2>
+<p>Each organization (Tenant) in MiniMart is isolated. Most API requests require a tenant context.</p>
+<h3 id="tenant-header">Tenant Header</h3>
+<p>Include the <code>Tenant-ID</code> header (UUID format) for organization-scoped requests:</p>
+<pre><code class="language-http">Tenant-ID: 550e8400-e29b-41d4-a716-446655440000
+</code></pre>
+<p><strong>Tenant Isolation:</strong>
+- Regular users and Tenant Admins can only access data within their organization.
+- Super Admins have platform-level access to manage multiple tenants.</p>
+<hr />
+<h2 id="user-roles-permissions">User Roles &amp; Permissions</h2>
+<h3 id="role-hierarchy">Role Hierarchy</h3>
+<pre><code>SUPER_ADMIN (Platform Management - No private data access)
+     │
+     ▼
+TENANT_ADMIN (Organization Admin - Full control over tenant resources)
+     │
+     ▼
+   USER (Regular Member - Access to shared lists and own content)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+<th>Access Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>USER</strong></td>
+<td>Regular member</td>
+<td>Can create/join shopping lists and items.</td>
+</tr>
+<tr>
+<td><strong>TENANT_ADMIN</strong></td>
+<td>Organization Admin</td>
+<td>Can manage all users, lists, and items in their tenant.</td>
+</tr>
+<tr>
+<td><strong>SUPER_ADMIN</strong></td>
+<td>Platform Admin</td>
+<td>Manages tenants and organization-level accounts.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-response-formats">Common Response Formats</h2>
+<h3 id="success-response">Success Response</h3>
+<pre><code class="language-json">{
+  &quot;message&quot;: &quot;Operation successful&quot;
+}
+</code></pre>
+<h3 id="paginated-response">Paginated Response</h3>
+<pre><code class="language-json">{
+  &quot;total&quot;: 100,
+  &quot;page&quot;: 1,
+  &quot;size&quot;: 10,
+  &quot;pages&quot;: 10,
+  &quot;items&quot;: [...]
+}
+</code></pre>
+<hr />
+<h2 id="api-endpoints">API Endpoints</h2>
+<h3 id="authentication-endpoints">Authentication Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST</code></td>
+<td><code>/auth/signup</code></td>
+<td>Public</td>
+<td>Register new account (Requires Tenant-ID)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST</code></td>
+<td><code>/auth/verify-email</code></td>
+<td>Public</td>
+<td>Verify email with 6-digit OTP</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST</code></td>
+<td><code>/auth/resend-otp</code></td>
+<td>Public</td>
+<td>Resend verification OTP</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>POST</code></td>
+<td><code>/auth/login</code></td>
+<td>Public</td>
+<td>Login and receive JWT tokens</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>POST</code></td>
+<td><code>/auth/refresh</code></td>
+<td>Refresh</td>
+<td>Get new access token</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>POST</code></td>
+<td><code>/auth/logout</code></td>
+<td>Auth</td>
+<td>Revoke access and refresh tokens</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>POST</code></td>
+<td><code>/auth/forgot-password</code></td>
+<td>Public</td>
+<td>Request password reset link</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>POST</code></td>
+<td><code>/auth/reset-password</code></td>
+<td>Public</td>
+<td>Reset password with JWT token</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>POST</code></td>
+<td><code>/auth/change-password</code></td>
+<td>Auth</td>
+<td>Change password for active user</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-management-endpoints">User Management Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td><code>GET</code></td>
+<td><code>/users</code></td>
+<td>Admin, SuperAdmin</td>
+<td>List users in organization</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>POST</code></td>
+<td><code>/users</code></td>
+<td>Admin, SuperAdmin</td>
+<td>Create new user</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>GET</code></td>
+<td><code>/users/me</code></td>
+<td>Auth</td>
+<td>Get current user's profile</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>GET</code></td>
+<td><code>/users/{id}</code></td>
+<td>Admin, SuperAdmin</td>
+<td>Get specific user details</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>PATCH</code></td>
+<td><code>/users/{id}</code></td>
+<td>Admin, SuperAdmin</td>
+<td>Update user information</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>DELETE</code></td>
+<td><code>/users/{id}</code></td>
+<td>Admin, SuperAdmin</td>
+<td>Soft-delete user account</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tenant-management-endpoints">Tenant Management Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td><code>GET</code></td>
+<td><code>/tenants</code></td>
+<td>SuperAdmin</td>
+<td>List all organizations</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>POST</code></td>
+<td><code>/tenants</code></td>
+<td>SuperAdmin</td>
+<td>Create new organization</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>GET</code></td>
+<td><code>/tenants/{id}</code></td>
+<td>SuperAdmin</td>
+<td>Get organization details</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>PATCH</code></td>
+<td><code>/tenants/{id}</code></td>
+<td>SuperAdmin</td>
+<td>Update organization settings</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>DELETE</code></td>
+<td><code>/tenants/{id}</code></td>
+<td>SuperAdmin</td>
+<td>Deactivate organization</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shopping-list-endpoints">Shopping List Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td><code>GET</code></td>
+<td><code>/shopping-lists</code></td>
+<td>Auth</td>
+<td>List accessible shopping lists</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>POST</code></td>
+<td><code>/shopping-lists</code></td>
+<td>Auth</td>
+<td>Create a new shopping list</td>
+</tr>
+<tr>
+<td>23</td>
+<td><code>GET</code></td>
+<td><code>/shopping-lists/{id}</code></td>
+<td>Member</td>
+<td>Get list details and members</td>
+</tr>
+<tr>
+<td>24</td>
+<td><code>PATCH</code></td>
+<td><code>/shopping-lists/{id}</code></td>
+<td>Owner, Admin</td>
+<td>Update list information</td>
+</tr>
+<tr>
+<td>25</td>
+<td><code>DELETE</code></td>
+<td><code>/shopping-lists/{id}</code></td>
+<td>Owner, Admin</td>
+<td>Soft-delete shopping list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-member-invitation-endpoints">List Member &amp; Invitation Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>26</td>
+<td><code>POST</code></td>
+<td><code>/shopping-lists/{id}/members</code></td>
+<td>Owner, Admin</td>
+<td>Invite member to list</td>
+</tr>
+<tr>
+<td>27</td>
+<td><code>DELETE</code></td>
+<td><code>/shopping-lists/{id}/members/{user_id}</code></td>
+<td>Owner, Admin</td>
+<td>Remove member from list</td>
+</tr>
+<tr>
+<td>28</td>
+<td><code>POST</code></td>
+<td><code>/invitations/accept</code></td>
+<td>Auth</td>
+<td>Accept list invitation token</td>
+</tr>
+<tr>
+<td>29</td>
+<td><code>POST</code></td>
+<td><code>/invitations/reject</code></td>
+<td>Auth</td>
+<td>Reject list invitation token</td>
+</tr>
+</tbody>
+</table>
+<h3 id="item-management-endpoints">Item Management Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30</td>
+<td><code>GET</code></td>
+<td><code>/shopping-lists/{id}/items</code></td>
+<td>Member</td>
+<td>List items in a list</td>
+</tr>
+<tr>
+<td>31</td>
+<td><code>POST</code></td>
+<td><code>/shopping-lists/{id}/items</code></td>
+<td>Member (can_add)</td>
+<td>Add item to list</td>
+</tr>
+<tr>
+<td>32</td>
+<td><code>PATCH</code></td>
+<td><code>/shopping-lists/items/{item_id}</code></td>
+<td>Member (can_update)</td>
+<td>Update item status/details</td>
+</tr>
+<tr>
+<td>33</td>
+<td><code>DELETE</code></td>
+<td><code>/shopping-lists/items/{item_id}</code></td>
+<td>Member (can_delete)</td>
+<td>Remove item from list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chat-notification-endpoints">Chat &amp; Notification Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Access</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>34</td>
+<td><code>GET</code></td>
+<td><code>/shopping-lists/{id}/chat/messages</code></td>
+<td>Member</td>
+<td>Get chat history</td>
+</tr>
+<tr>
+<td>35</td>
+<td><code>POST</code></td>
+<td><code>/shopping-lists/{id}/chat/messages</code></td>
+<td>Member</td>
+<td>Send chat message (REST)</td>
+</tr>
+<tr>
+<td>36</td>
+<td><code>GET</code></td>
+<td><code>/notifications</code></td>
+<td>Auth</td>
+<td>List user notifications</td>
+</tr>
+<tr>
+<td>37</td>
+<td><code>PATCH</code></td>
+<td><code>/notifications/read</code></td>
+<td>Auth</td>
+<td>Mark all notifications as read</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="access-definitions">Access Definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Public</strong></td>
+<td>No authentication or header required.</td>
+</tr>
+<tr>
+<td><strong>Auth</strong></td>
+<td>Valid JWT Bearer token + appropriate <code>Tenant-ID</code> header.</td>
+</tr>
+<tr>
+<td><strong>Member</strong></td>
+<td>User must be an accepted member of the specific list.</td>
+</tr>
+<tr>
+<td><strong>Owner</strong></td>
+<td>User must be the designated owner of the shopping list.</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Role must be <code>TENANT_ADMIN</code>.</td>
+</tr>
+<tr>
+<td><strong>SuperAdmin</strong></td>
+<td>Role must be <code>SUPER_ADMIN</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="http-status-codes">HTTP Status Codes</h2>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 OK</code></td>
+<td>Successful retrieval or update.</td>
+</tr>
+<tr>
+<td><code>201 Created</code></td>
+<td>Successful creation of a resource.</td>
+</tr>
+<tr>
+<td><code>204 No Content</code></td>
+<td>Successful deletion (no body returned).</td>
+</tr>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Validation error or business logic violation.</td>
+</tr>
+<tr>
+<td><code>401 Unauthorized</code></td>
+<td>Missing or invalid JWT token.</td>
+</tr>
+<tr>
+<td><code>403 Forbidden</code></td>
+<td>Insufficient role or cross-tenant violation.</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>Resource does not exist or access is restricted.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Last Updated:</strong> February 17, 2026
+<strong>API Version:</strong> v1.0.0</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

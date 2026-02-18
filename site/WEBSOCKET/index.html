@@ -1,0 +1,771 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>WebSocket Protocol Specification - Mini Mart</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#websocket-protocol-specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mini Mart" class="md-header__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mini Mart
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WebSocket Protocol Specification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mini Mart" class="md-nav__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mini Mart
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_usecases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission Matrix.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-global-sync-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Global Sync Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-chat-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Chat Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#establishing-a-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Establishing a Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-to-server-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client-to-Server Messages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client-to-Server Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-subscription-management-global-scope-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Subscription Management (Global Scope Only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-connection-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Connection Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-to-client-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-to-Client Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server-to-Client Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-item-lifecycle-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Item Lifecycle Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-membership-list-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Membership &amp; List Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-chat-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Chat Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-control-error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Control &amp; Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="websocket-protocol-specification">WebSocket Protocol Specification</h1>
+<p>MiniMart uses WebSockets to provide real-time synchronization for shopping lists and instant communication via chat.</p>
+<hr />
+<h2 id="connection-endpoints">Connection Endpoints</h2>
+<h3 id="1-global-sync-scope">1. Global Sync Scope</h3>
+<p><strong>URL:</strong> <code>ws://&lt;base_url&gt;/ws?access_token=&lt;jwt_token&gt;</code>
+- <strong>Purpose:</strong> Used for real-time item updates, membership changes, and general notifications across all lists a user is a member of.
+- <strong>Requirement:</strong> User must be authenticated.</p>
+<h3 id="2-chat-scope">2. Chat Scope</h3>
+<p><strong>URL:</strong> <code>ws://&lt;base_url&gt;/ws/shopping-lists/{list_id}/chat?access_token=&lt;jwt_token&gt;</code>
+- <strong>Purpose:</strong> Dedicated bi-directional communication for a specific shopping list's chat room.
+- <strong>Requirement:</strong> User must be an accepted member of the shopping list.</p>
+<hr />
+<h2 id="establishing-a-connection">Establishing a Connection</h2>
+<ol>
+<li><strong>Authentication:</strong> The <code>access_token</code> must be provided as a query parameter during the initial handshake.</li>
+<li><strong>Identification:</strong> The system automatically extracts the <code>User-ID</code> and <code>Tenant-ID</code> from the token.</li>
+<li><strong>Implicit Subscriptions:</strong> Upon connecting to the global scope, the user is automatically subscribed to all shopping lists they currently belong to.</li>
+</ol>
+<hr />
+<h2 id="client-to-server-messages">Client-to-Server Messages</h2>
+<p>Clients communicate with the server using a consistent JSON format:</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;&lt;message_type&gt;&quot;,
+  &quot;payload&quot;: { ... }
+}
+</code></pre>
+<h3 id="1-subscription-management-global-scope-only">1. Subscription Management (Global Scope Only)</h3>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subscribe</code></td>
+<td><code>{"list_id": "UUID"}</code></td>
+<td>Manually subscribe to real-time events for a specific list.</td>
+</tr>
+<tr>
+<td><code>unsubscribe</code></td>
+<td><code>{"list_id": "UUID"}</code></td>
+<td>Stop receiving real-time events for a specific list.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-connection-health">2. Connection Health</h3>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ping</code></td>
+<td><code>{}</code></td>
+<td>Sent by the client to keep the connection alive.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="server-to-client-events">Server-to-Client Events</h2>
+<p>The server broadcasts events when resources are modified.</p>
+<h3 id="1-item-lifecycle-events">1. Item Lifecycle Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event Type (<code>type</code>)</th>
+<th>Payload Overview</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item.added</code></td>
+<td><code>id, name, quantity, status, added_by</code></td>
+<td>A new item is added to the list.</td>
+</tr>
+<tr>
+<td><code>item.updated</code></td>
+<td><code>id, name, quantity, status</code></td>
+<td>An item's name, qty, or purchase status is changed.</td>
+</tr>
+<tr>
+<td><code>item.deleted</code></td>
+<td><code>id</code></td>
+<td>An item is removed from the list.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-membership-list-events">2. Membership &amp; List Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event Type (<code>type</code>)</th>
+<th>Payload Overview</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>member.removed</code></td>
+<td><code>id</code></td>
+<td>A member is removed from the list by an admin/owner.</td>
+</tr>
+<tr>
+<td><code>member.left</code></td>
+<td><code>id</code></td>
+<td>A member voluntarily leaves the list.</td>
+</tr>
+<tr>
+<td><code>list_updated</code></td>
+<td><code>id, name</code></td>
+<td>The shopping list's title is modified.</td>
+</tr>
+<tr>
+<td><code>list_deleted</code></td>
+<td><code>id</code></td>
+<td>The entire list is soft-deleted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-chat-events">3. Chat Events</h3>
+<p><strong>Note:</strong> These events are scoped specifically to the Chat WebSocket connection.
+| Event Type (<code>type</code>) | Payload Overview | Trigger |
+|--------------------|------------------|---------|
+| <code>chat.message</code> | <code>id, list_id, sender_id, sender_name, message, created_at</code> | A new chat message is sent. |</p>
+<h3 id="4-control-error-responses">4. Control &amp; Error Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Message Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pong</code></td>
+<td><code>{}</code></td>
+<td>Server response to a <code>ping</code> message.</td>
+</tr>
+<tr>
+<td><code>subscribed</code></td>
+<td><code>{"list_id": "UUID"}</code></td>
+<td>Confirmation of a successful subscription.</td>
+</tr>
+<tr>
+<td><code>unsubscribed</code></td>
+<td><code>{"list_id": "UUID"}</code></td>
+<td>Confirmation of unsubscription.</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>{"message": "..."}</code></td>
+<td>Error alert (e.g., "Not a member" or "Invalid format").</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="implementation-notes">Implementation Notes</h2>
+<ul>
+<li><strong>Real-Time Sync Scoping:</strong> Item and list events are only broadcast to users currently connected to the Global Scope and who are accepted members of the target list.</li>
+<li><strong>Heartbeats:</strong> It is recommended to send a <code>ping</code> every 30-60 seconds to prevent connection timeouts in some network environments.</li>
+<li><strong>Disconnection:</strong> The server will immediately disconnect a user if their account is deactivated or their role is changed to an insufficient level.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

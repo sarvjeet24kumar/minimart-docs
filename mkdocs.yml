@@ -1,0 +1,25 @@
+site_name: Mini Mart
+
+theme:
+  name: material
+
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+
+nav:
+  - Overview: index.md
+  - Auth Flow: auth.md
+  - Tenant Onboarding: tenant.md
+  - Functional Use Cases: functional_usecases.md
+  - Modules: functional_modules.md
+  - Database Schema: schema_design.md
+  - Permission Matrix.: permission.md
+  # - Api Reference.: api.md
+  # - Api Docs: api_docs.md
+
+
+
+plugins:
+  - mermaid2

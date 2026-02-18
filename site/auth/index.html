@@ -1,0 +1,926 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../tenant/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Auth Flow - Mini Mart</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#authentication-security" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Mini Mart" class="md-header__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mini Mart
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Auth Flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mini Mart" class="md-nav__button md-logo" aria-label="Mini Mart" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mini Mart
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth Flow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#registration-email-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration &amp; Email Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registration &amp; Email Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signup-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signup Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resend-verification-otp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resend Verification OTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Login Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-credential-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Credential Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Password Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forgot-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forgot Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Mechanism
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jwt-and-token-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT and Token Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies &amp; Middleware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenant Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_usecases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission Matrix.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#registration-email-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration &amp; Email Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registration &amp; Email Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signup-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signup Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resend-verification-otp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resend Verification OTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Login Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-credential-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Credential Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Password Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forgot-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forgot Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Mechanism
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jwt-and-token-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT and Token Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies &amp; Middleware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="authentication-security">Authentication &amp; Security</h1>
+<p>MiniMart implements a secure, tenant-scoped authentication system using JWT tokens and OTP-based email verification for onboarding and password recovery.</p>
+<hr />
+<h2 id="registration-email-verification">Registration &amp; Email Verification</h2>
+<h3 id="signup-flow">Signup Flow</h3>
+<ol>
+<li>User sends credentials to <code>POST /api/v1/auth/signup</code> with the <code>Tenant-ID</code> header.</li>
+<li>System validates:</li>
+<li>Tenant exists and is active.</li>
+<li>Email is unique within the tenant.</li>
+<li>Username is unique within the tenant.</li>
+<li>Password meets strength requirements (min 8 chars, mixed case, at least one digit).</li>
+<li>User is created with <code>is_email_verified=False</code> and <code>is_active=False</code>.</li>
+<li>A 6-digit OTP is generated and stored in Redis (<code>otp:{tenant_id}:{email}</code>).</li>
+<li>An asynchronous task (via BackgroundTasks) dispatches the verification email.</li>
+<li>Response: <code>"Signup successful. Please verify your email."</code></li>
+</ol>
+<h3 id="email-verification">Email Verification</h3>
+<ol>
+<li>User submits the OTP to <code>POST /api/v1/auth/verify-email</code>.</li>
+<li>Requires <code>email</code> and <code>otp</code>.</li>
+<li>Requires <code>Tenant-ID</code> header.</li>
+<li>System validates the OTP against the value stored in Redis.</li>
+<li>On success:</li>
+<li>User is marked <code>is_email_verified=True</code> and <code>is_active=True</code>.</li>
+<li>OTP is cleared from Redis.</li>
+<li>The account is now active and ready for login.</li>
+</ol>
+<h3 id="resend-verification-otp">Resend Verification OTP</h3>
+<ol>
+<li>User requests a new code via <code>POST /api/v1/auth/resend-otp</code>.</li>
+<li>Requires <code>email</code> and the <code>Tenant-ID</code> header.</li>
+<li>System generates a new 6-digit OTP and resets the TTL in Redis (<code>OTP_EXPIRE_MINUTES</code>).</li>
+<li>A fresh verification email is sent.</li>
+</ol>
+<hr />
+<h2 id="login-flow">Login Flow</h2>
+<p>MiniMart uses a single-factor (password-based) login flow that issues secure JWT tokens.</p>
+<h3 id="step-1-credential-validation">Step 1: Credential Validation</h3>
+<ol>
+<li>User sends credentials to <code>POST /api/v1/auth/login</code>.</li>
+<li>Requires <code>email</code> and <code>password</code>.</li>
+<li><code>Tenant-ID</code> header is optional for SuperAdmins but required for Tenant Admins and Users.</li>
+<li>System validates:</li>
+<li>User exists in the specified tenant (or is a SuperAdmin).</li>
+<li>Account is not soft-deleted (<code>deleted_at</code> is null).</li>
+<li>Email is verified (<code>is_email_verified=True</code>).</li>
+<li>Account is active (<code>is_active=True</code>).</li>
+<li>Tenant is active.</li>
+<li>Password is correct.</li>
+<li>On success:</li>
+<li>System issues an <code>access_token</code> and a <code>refresh_token</code>.</li>
+<li>Response contains both tokens and their expiration details.</li>
+</ol>
+<hr />
+<h2 id="password-management">Password Management</h2>
+<h3 id="forgot-password">Forgot Password</h3>
+<ol>
+<li>User submits a request to <code>POST /api/v1/auth/forgot-password</code>.</li>
+<li>Requires <code>email</code>.</li>
+<li>System validates user existence and generates a secure reset JWT.</li>
+<li>The token JTI is cached in Redis (<code>password_reset:{user_id}</code>) to ensure only one active reset link per user.</li>
+<li>An email is sent with a secure reset link.</li>
+<li>Response is always generic: <code>"If an account with that email exists, a password reset link has been sent."</code> to prevent email enumeration.</li>
+</ol>
+<h3 id="reset-password">Reset Password</h3>
+<ol>
+<li>User submits new credentials to <code>POST /api/v1/auth/reset-password</code>.</li>
+<li>Requires <code>token</code>, <code>new_password</code>, and <code>confirm_password</code>.</li>
+<li>System validates:</li>
+<li>Token is a valid <code>password_reset</code> JWT and has not expired.</li>
+<li>Token JTI matches the one stored in Redis.</li>
+<li>Passwords match and meet strength requirements.</li>
+<li>System updates the hashed password in the database.</li>
+<li>Reset record is cleared from Redis.</li>
+</ol>
+<h3 id="change-password">Change Password</h3>
+<ol>
+<li>Authenticated user calls <code>POST /api/v1/auth/change-password</code>.</li>
+<li>Required fields:</li>
+<li><code>current_password</code>: Must match the existing password.</li>
+<li><code>new_password</code>: Must meet requirements and differ from the current one.</li>
+<li>System verifies the current password and updates to the new hashed version.</li>
+</ol>
+<hr />
+<h2 id="authentication-mechanism">Authentication Mechanism</h2>
+<h3 id="jwt-and-token-security">JWT and Token Security</h3>
+<ul>
+<li><strong>Access Token:</strong> Short-lived token used for API authorization. Contains <code>sub</code> (user_id), <code>tenant_id</code>, <code>role</code>, and <code>email</code>.</li>
+<li><strong>Refresh Token:</strong> Long-lived token used to obtain new access tokens.</li>
+<li><strong>Blacklisting:</strong> <ul>
+<li>On <strong>Logout</strong>, the access token JTI is added to a Redis-based blacklist.</li>
+<li>The refresh token is added to the <code>blacklisted_tokens</code> database table.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dependencies-middleware">Dependencies &amp; Middleware</h3>
+<p>All protected routes use the <code>get_current_user</code> dependency, which:
+1. Extracts the JWT from the <code>Authorization: Bearer &lt;token&gt;</code> header.
+2. Validates the signature and expiration.
+3. Checks if the token JTI is in the Redis blacklist.
+4. Verifies the user and their associated tenant are both active.
+5. Injects the authenticated <code>User</code> model into the request context.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

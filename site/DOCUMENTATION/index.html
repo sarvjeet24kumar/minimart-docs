@@ -1,0 +1,3547 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>MiniMart — Technical Documentation - Mini Mart</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#minimart-technical-documentation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Mini Mart" class="md-header__button md-logo" data-md-component="logo" href=".." title="Mini Mart">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Mini Mart
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              MiniMart — Technical Documentation
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Mini Mart" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Mini Mart">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Mini Mart
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../auth/">
+<span class="md-ellipsis">
+    
+  
+    Auth Flow
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tenant/">
+<span class="md-ellipsis">
+    
+  
+    Tenant Onboarding
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../functional_usecases/">
+<span class="md-ellipsis">
+    
+  
+    Functional Use Cases
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../functional_modules/">
+<span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../schema_design/">
+<span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../permission/">
+<span class="md-ellipsis">
+    
+  
+    Permission Matrix.
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-system-overview">
+<span class="md-ellipsis">
+      
+        1. System Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-technology-stack">
+<span class="md-ellipsis">
+      
+        2. Technology Stack
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-project-structure">
+<span class="md-ellipsis">
+      
+        3. Project Structure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-configuration-environment">
+<span class="md-ellipsis">
+      
+        4. Configuration &amp; Environment
+      
+    </span>
+</a>
+<nav aria-label="4. Configuration &amp; Environment" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-variables">
+<span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-dependent-behavior">
+<span class="md-ellipsis">
+      
+        Environment-Dependent Behavior
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-data-model">
+<span class="md-ellipsis">
+      
+        5. Data Model
+      
+    </span>
+</a>
+<nav aria-label="5. Data Model" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-base-model">
+<span class="md-ellipsis">
+      
+        5.1 Base Model
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-entity-relationship-diagram">
+<span class="md-ellipsis">
+      
+        5.2 Entity Relationship Diagram
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-model-details">
+<span class="md-ellipsis">
+      
+        5.3 Model Details
+      
+    </span>
+</a>
+<nav aria-label="5.3 Model Details" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tenant">
+<span class="md-ellipsis">
+      
+        Tenant
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user">
+<span class="md-ellipsis">
+      
+        User
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shoppinglist">
+<span class="md-ellipsis">
+      
+        ShoppingList
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shoppinglistmember">
+<span class="md-ellipsis">
+      
+        ShoppingListMember
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#item">
+<span class="md-ellipsis">
+      
+        Item
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chatmessage">
+<span class="md-ellipsis">
+      
+        ChatMessage
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notification">
+<span class="md-ellipsis">
+      
+        Notification
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shoppinglistinvite">
+<span class="md-ellipsis">
+      
+        ShoppingListInvite
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blacklistedtoken">
+<span class="md-ellipsis">
+      
+        BlacklistedToken
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-enumerations">
+<span class="md-ellipsis">
+      
+        6. Enumerations
+      
+    </span>
+</a>
+<nav aria-label="6. Enumerations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#userrole">
+<span class="md-ellipsis">
+      
+        UserRole
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memberrole">
+<span class="md-ellipsis">
+      
+        MemberRole
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#itemstatus">
+<span class="md-ellipsis">
+      
+        ItemStatus
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invitestatus">
+<span class="md-ellipsis">
+      
+        InviteStatus
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notificationtype">
+<span class="md-ellipsis">
+      
+        NotificationType
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-api-specification">
+<span class="md-ellipsis">
+      
+        7. API Specification
+      
+    </span>
+</a>
+<nav aria-label="7. API Specification" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-response-schemas">
+<span class="md-ellipsis">
+      
+        Common Response Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagination-parameters">
+<span class="md-ellipsis">
+      
+        Pagination Parameters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71-authentication">
+<span class="md-ellipsis">
+      
+        7.1 Authentication
+      
+    </span>
+</a>
+<nav aria-label="7.1 Authentication" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requestresponse-bodies">
+<span class="md-ellipsis">
+      
+        Request/Response Bodies
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72-users">
+<span class="md-ellipsis">
+      
+        7.2 Users
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#73-tenants">
+<span class="md-ellipsis">
+      
+        7.3 Tenants
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#74-shopping-lists">
+<span class="md-ellipsis">
+      
+        7.4 Shopping Lists
+      
+    </span>
+</a>
+<nav aria-label="7.4 Shopping Lists" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#member-permissions-update">
+<span class="md-ellipsis">
+      
+        Member Permissions Update
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#75-items">
+<span class="md-ellipsis">
+      
+        7.5 Items
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#76-invitations">
+<span class="md-ellipsis">
+      
+        7.6 Invitations
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#77-chat">
+<span class="md-ellipsis">
+      
+        7.7 Chat
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#78-notifications">
+<span class="md-ellipsis">
+      
+        7.8 Notifications
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#79-health">
+<span class="md-ellipsis">
+      
+        7.9 Health
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-websocket-protocol">
+<span class="md-ellipsis">
+      
+        8. WebSocket Protocol
+      
+    </span>
+</a>
+<nav aria-label="8. WebSocket Protocol" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#81-global-websocket-ws">
+<span class="md-ellipsis">
+      
+        8.1 Global WebSocket — /ws
+      
+    </span>
+</a>
+<nav aria-label="8.1 Global WebSocket — /ws" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#client-server-messages">
+<span class="md-ellipsis">
+      
+        Client → Server Messages
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-client-messages">
+<span class="md-ellipsis">
+      
+        Server → Client Messages
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#82-chat-websocket-wsshopping-listslist_idchat">
+<span class="md-ellipsis">
+      
+        8.2 Chat WebSocket — /ws/shopping-lists/{list_id}/chat
+      
+    </span>
+</a>
+<nav aria-label="8.2 Chat WebSocket — /ws/shopping-lists/{list_id}/chat" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#client-server-messages_1">
+<span class="md-ellipsis">
+      
+        Client → Server Messages
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-client-messages_1">
+<span class="md-ellipsis">
+      
+        Server → Client Messages
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#83-connection-manager-architecture">
+<span class="md-ellipsis">
+      
+        8.3 Connection Manager Architecture
+      
+    </span>
+</a>
+<nav aria-label="8.3 Connection Manager Architecture" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-behaviors">
+<span class="md-ellipsis">
+      
+        Key Behaviors
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-security-authentication">
+<span class="md-ellipsis">
+      
+        9. Security &amp; Authentication
+      
+    </span>
+</a>
+<nav aria-label="9. Security &amp; Authentication" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#91-password-security">
+<span class="md-ellipsis">
+      
+        9.1 Password Security
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#92-jwt-token-types">
+<span class="md-ellipsis">
+      
+        9.2 JWT Token Types
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#93-token-blacklisting">
+<span class="md-ellipsis">
+      
+        9.3 Token Blacklisting
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#94-otp-flow">
+<span class="md-ellipsis">
+      
+        9.4 OTP Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#95-input-normalization">
+<span class="md-ellipsis">
+      
+        9.5 Input Normalization
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-permission-matrix">
+<span class="md-ellipsis">
+      
+        10. Permission Matrix
+      
+    </span>
+</a>
+<nav aria-label="10. Permission Matrix" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#101-platform-level-roles">
+<span class="md-ellipsis">
+      
+        10.1 Platform-Level Roles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#102-shopping-list-roles">
+<span class="md-ellipsis">
+      
+        10.2 Shopping List Roles
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-real-time-event-system">
+<span class="md-ellipsis">
+      
+        11. Real-Time Event System
+      
+    </span>
+</a>
+<nav aria-label="11. Real-Time Event System" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#111-websocket-event-types">
+<span class="md-ellipsis">
+      
+        11.1 WebSocket Event Types
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#112-event-delivery-rules">
+<span class="md-ellipsis">
+      
+        11.2 Event Delivery Rules
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-redis-service">
+<span class="md-ellipsis">
+      
+        12. Redis Service
+      
+    </span>
+</a>
+<nav aria-label="12. Redis Service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-patterns">
+<span class="md-ellipsis">
+      
+        Key Patterns
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-error-handling">
+<span class="md-ellipsis">
+      
+        13. Error Handling
+      
+    </span>
+</a>
+<nav aria-label="13. Error Handling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exception-hierarchy">
+<span class="md-ellipsis">
+      
+        Exception Hierarchy
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-response-format">
+<span class="md-ellipsis">
+      
+        Error Response Format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#websocket-close-codes">
+<span class="md-ellipsis">
+      
+        WebSocket Close Codes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-schemas-reference">
+<span class="md-ellipsis">
+      
+        14. Schemas Reference
+      
+    </span>
+</a>
+<nav aria-label="14. Schemas Reference" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth-schemas">
+<span class="md-ellipsis">
+      
+        Auth Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-schemas">
+<span class="md-ellipsis">
+      
+        User Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tenant-schemas">
+<span class="md-ellipsis">
+      
+        Tenant Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shopping-list-schemas">
+<span class="md-ellipsis">
+      
+        Shopping List Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#item-schemas">
+<span class="md-ellipsis">
+      
+        Item Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invitation-schemas">
+<span class="md-ellipsis">
+      
+        Invitation Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chat-schemas">
+<span class="md-ellipsis">
+      
+        Chat Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notification-schemas">
+<span class="md-ellipsis">
+      
+        Notification Schemas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#member-schemas">
+<span class="md-ellipsis">
+      
+        Member Schemas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15-constants-reference">
+<span class="md-ellipsis">
+      
+        15. Constants Reference
+      
+    </span>
+</a>
+<nav aria-label="15. Constants Reference" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#field-length-limits">
+<span class="md-ellipsis">
+      
+        Field Length Limits
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#item-constraints">
+<span class="md-ellipsis">
+      
+        Item Constraints
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pagination-defaults">
+<span class="md-ellipsis">
+      
+        Pagination Defaults
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validation-patterns">
+<span class="md-ellipsis">
+      
+        Validation Patterns
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="minimart-technical-documentation">MiniMart — Technical Documentation</h1>
+<blockquote>
+<p><strong>Multi-tenant shopping list application with real-time synchronization</strong></p>
+<p>Version: <code>1.0.0</code>  |  Python <code>≥ 3.11</code>  |  FastAPI + SQLAlchemy (async) + Redis</p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-system-overview">System Overview</a></li>
+<li><a href="#2-technology-stack">Technology Stack</a></li>
+<li><a href="#3-project-structure">Project Structure</a></li>
+<li><a href="#4-configuration--environment">Configuration &amp; Environment</a></li>
+<li><a href="#5-data-model">Data Model</a></li>
+<li><a href="#6-enumerations">Enumerations</a></li>
+<li><a href="#7-api-specification">API Specification</a></li>
+<li><a href="#71-authentication">Authentication</a></li>
+<li><a href="#72-users">Users</a></li>
+<li><a href="#73-tenants">Tenants</a></li>
+<li><a href="#74-shopping-lists">Shopping Lists</a></li>
+<li><a href="#75-items">Items</a></li>
+<li><a href="#76-invitations">Invitations</a></li>
+<li><a href="#77-chat">Chat</a></li>
+<li><a href="#78-notifications">Notifications</a></li>
+<li><a href="#79-health">Health</a></li>
+<li><a href="#8-websocket-protocol">WebSocket Protocol</a></li>
+<li><a href="#9-security--authentication">Security &amp; Authentication</a></li>
+<li><a href="#10-permission-matrix">Permission Matrix</a></li>
+<li><a href="#11-real-time-event-system">Real-Time Event System</a></li>
+<li><a href="#12-redis-service">Redis Service</a></li>
+<li><a href="#13-error-handling">Error Handling</a></li>
+<li><a href="#14-schemas-reference">Schemas Reference</a></li>
+<li><a href="#15-constants-reference">Constants Reference</a></li>
+</ol>
+<hr/>
+<h2 id="1-system-overview">1. System Overview</h2>
+<p>MiniMart is a <strong>multi-tenant</strong>, real-time collaborative shopping list application. It allows organizations (tenants) to manage users who create, share, and collaborate on shopping lists. The system features:</p>
+<ul>
+<li><strong>Multi-tenancy</strong> — Complete data isolation between tenants via tenant-scoped queries and foreign keys.</li>
+<li><strong>Real-time collaboration</strong> — WebSocket-based live updates for list changes, chat messages, and notifications.</li>
+<li><strong>Role-based access control</strong> — Two-tier permission system: platform-level roles (<code>SUPER_ADMIN</code>, <code>TENANT_ADMIN</code>, <code>USER</code>) and list-level roles (<code>OWNER</code>, <code>MEMBER</code> with granular permission flags).</li>
+<li><strong>Stateless invitations</strong> — JWT-based invitation tokens with configurable expiration.</li>
+<li><strong>Soft-delete pattern</strong> — All entities support soft deletion via <code>deleted_at</code> timestamps.</li>
+</ul>
+<hr/>
+<h2 id="2-technology-stack">2. Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Framework</strong></td>
+<td>FastAPI <code>≥ 0.128.4</code></td>
+<td>Async REST API + WebSocket endpoints</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td>Uvicorn <code>≥ 0.34.0</code></td>
+<td>ASGI server with hot-reload in development</td>
+</tr>
+<tr>
+<td><strong>ORM</strong></td>
+<td>SQLAlchemy <code>≥ 2.0.46</code> (async)</td>
+<td>Async PostgreSQL ORM with <code>asyncpg</code></td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>PostgreSQL (via <code>asyncpg ≥ 0.30</code>)</td>
+<td>Primary data store</td>
+</tr>
+<tr>
+<td><strong>Migrations</strong></td>
+<td>Alembic <code>≥ 1.15.1</code></td>
+<td>Schema migrations</td>
+</tr>
+<tr>
+<td><strong>Cache / Pub-Sub</strong></td>
+<td>Redis <code>≥ 5.2.1</code></td>
+<td>OTP storage, token blacklisting, invites</td>
+</tr>
+<tr>
+<td><strong>Auth</strong></td>
+<td>python-jose <code>≥ 3.4.0</code> (JWT)</td>
+<td>Token creation and validation</td>
+</tr>
+<tr>
+<td><strong>Password Hash</strong></td>
+<td>argon2-cffi <code>≥ 25.1.0</code></td>
+<td>Argon2 password hashing</td>
+</tr>
+<tr>
+<td><strong>Validation</strong></td>
+<td>Pydantic <code>≥ 2.12.5</code></td>
+<td>Request/response schema validation</td>
+</tr>
+<tr>
+<td><strong>Settings</strong></td>
+<td>pydantic-settings <code>≥ 2.8.1</code></td>
+<td>Environment-based configuration</td>
+</tr>
+<tr>
+<td><strong>Email</strong></td>
+<td>aiosmtplib <code>≥ 3.0.3</code></td>
+<td>Async SMTP for OTP and invitation emails</td>
+</tr>
+<tr>
+<td><strong>Task Queue</strong></td>
+<td>Celery <code>≥ 5.6.2</code></td>
+<td>Background task processing</td>
+</tr>
+<tr>
+<td><strong>UUIDs</strong></td>
+<td>uuid6 <code>≥ 2024.2.25</code></td>
+<td>UUIDv7 for time-ordered primary keys</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="3-project-structure">3. Project Structure</h2>
+<pre><code>app/
+├── main.py                     # FastAPI app factory, lifespan, middleware
+├── __init__.py
+│
+├── api/                        # REST API layer
+│   ├── __init__.py
+│   ├── router.py               # Top-level router (/api/v1 prefix)
+│   ├── health.py               # Health check endpoints (/health)
+│   └── v1/
+│       ├── __init__.py
+│       ├── router.py           # v1 sub-routers aggregation
+│       ├── auth.py             # Authentication endpoints
+│       ├── users.py            # User management endpoints
+│       ├── tenants.py          # Tenant management endpoints
+│       ├── shopping_lists.py   # Shopping list + member endpoints
+│       ├── items.py            # Item CRUD endpoints
+│       ├── invitations.py      # Invitation endpoints
+│       ├── chat.py             # Chat message endpoints
+│       └── notifications.py    # Notification endpoints
+│
+├── models/                     # SQLAlchemy models
+│   ├── __init__.py             # Model registry &amp; exports
+│   ├── base.py                 # BaseModel (id, created_at, updated_at, deleted_at)
+│   ├── tenant.py               # Tenant entity
+│   ├── user.py                 # User entity
+│   ├── shopping_list.py        # ShoppingList entity
+│   ├── shopping_list_member.py # ShoppingListMember entity
+│   ├── item.py                 # Item entity
+│   ├── invitation.py           # ShoppingListInvite entity
+│   ├── chat_message.py         # ChatMessage entity
+│   ├── notification.py         # Notification entity
+│   └── token_blacklist.py      # BlacklistedToken entity
+│
+├── schemas/                    # Pydantic schemas
+│   ├── __init__.py
+│   ├── common.py               # NormalizedModel, PaginatedResponse, MessageResponse
+│   ├── auth.py                 # Auth request/response schemas
+│   ├── user.py                 # User CRUD schemas
+│   ├── tenant.py               # Tenant CRUD schemas
+│   ├── shopping_list.py        # Shopping list schemas
+│   ├── shopping_list_member.py # Member permission schemas
+│   ├── item.py                 # Item schemas
+│   ├── invitation.py           # Invitation schemas
+│   ├── chat.py                 # Chat message schemas
+│   └── notification.py         # Notification schemas
+│
+├── services/                   # Business logic layer
+│   ├── __init__.py
+│   ├── auth_service.py         # Authentication &amp; token management
+│   ├── user_service.py         # User CRUD operations
+│   ├── tenant_service.py       # Tenant CRUD operations
+│   ├── chat_service.py         # Chat message operations
+│   ├── notification_service.py # Notification creation &amp; delivery
+│   ├── email_service.py        # Email sending (OTP, invitations)
+│   ├── redis_service.py        # Redis operations (singleton)
+│   ├── shopping_list/          # Shopping list domain services
+│   │   ├── base.py             # BaseListService (access control, event publishing)
+│   │   ├── list_service.py     # ShoppingListService
+│   │   ├── item_service.py     # ListItemService
+│   │   └── member_service.py   # ListMemberService
+│   └── invitation/             # Invitation domain services
+│       ├── action_service.py   # Accept/reject invitation actions
+│       └── management_service.py # Send/cancel/resend invitations
+│
+├── core/                       # Core infrastructure
+│   ├── config.py               # Settings (pydantic-settings)
+│   ├── dependencies.py         # FastAPI dependencies (auth, pagination, ACL)
+│   ├── security.py             # JWT, Argon2, OTP utilities
+│   ├── logging.py              # Centralized logging setup
+│   └── time.py                 # Timezone-aware time utilities
+│
+├── db/                         # Database infrastructure
+│   ├── database.py             # Engine creation, init_db, close_db
+│   └── session.py              # Async session factory &amp; get_db dependency
+│
+├── websocket/                  # WebSocket layer
+│   ├── __init__.py
+│   ├── endpoints.py            # WS endpoint handlers (/ws, /ws/shopping-lists/{id}/chat)
+│   ├── handlers.py             # Message routing (subscribe, unsubscribe, ping)
+│   └── manager.py              # ConnectionManager singleton
+│
+├── middleware/
+│   └── logging.py              # Request/response logging middleware
+│
+├── exceptions/                 # Custom exception hierarchy
+│   ├── __init__.py             # Exception exports
+│   ├── base.py                 # MiniMartException base class
+│   ├── auth.py                 # Auth-related exceptions
+│   ├── user.py                 # User/tenant exceptions
+│   ├── validation.py           # Validation exceptions
+│   └── handlers.py             # Global exception handlers
+│
+├── common/                     # Shared utilities
+│   ├── enums.py                # Centralized enumerations
+│   └── constants.py            # Magic strings, field lengths, WS events
+│
+├── tasks/                      # Celery background tasks
+│   └── ...
+│
+└── utils/                      # General utilities
+    └── ...
+</code></pre>
+<hr/>
+<h2 id="4-configuration-environment">4. Configuration &amp; Environment</h2>
+<p>All configuration is managed via <strong>pydantic-settings</strong> loaded from a <code>.env</code> file.</p>
+<h3 id="environment-variables">Environment Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APP_NAME</code></td>
+<td><code>str</code></td>
+<td><code>MiniMart</code></td>
+<td>Application display name</td>
+</tr>
+<tr>
+<td><code>APP_ENV</code></td>
+<td><code>str</code></td>
+<td><code>development</code></td>
+<td>Environment (<code>development</code> / <code>production</code>)</td>
+</tr>
+<tr>
+<td><code>DEBUG</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td>Debug mode toggle</td>
+</tr>
+<tr>
+<td><code>SECRET_KEY</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>Application secret key</td>
+</tr>
+<tr>
+<td><code>TIMEZONE</code></td>
+<td><code>str</code></td>
+<td><code>Asia/Kolkata</code></td>
+<td>Application timezone (IST)</td>
+</tr>
+<tr>
+<td><code>DATABASE_URL</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>PostgreSQL connection string (asyncpg)</td>
+</tr>
+<tr>
+<td><code>REDIS_URL</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>Redis connection URL</td>
+</tr>
+<tr>
+<td><code>REDIS_TOKEN_DB</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>Redis DB index for token storage</td>
+</tr>
+<tr>
+<td><code>JWT_SECRET_KEY</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>JWT signing secret</td>
+</tr>
+<tr>
+<td><code>JWT_ALGORITHM</code></td>
+<td><code>str</code></td>
+<td><code>HS256</code></td>
+<td>JWT algorithm</td>
+</tr>
+<tr>
+<td><code>JWT_ACCESS_TOKEN_EXPIRE_MINUTES</code></td>
+<td><code>int</code></td>
+<td><em>required</em></td>
+<td>Access token TTL in minutes</td>
+</tr>
+<tr>
+<td><code>JWT_REFRESH_TOKEN_EXPIRE_DAYS</code></td>
+<td><code>int</code></td>
+<td><em>required</em></td>
+<td>Refresh token TTL in days</td>
+</tr>
+<tr>
+<td><code>INVITATION_TOKEN_EXPIRE_HOURS</code></td>
+<td><code>int</code></td>
+<td><em>required</em></td>
+<td>Invitation token TTL in hours</td>
+</tr>
+<tr>
+<td><code>INVITATION_BASE_URL</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>Frontend invite URL prefix</td>
+</tr>
+<tr>
+<td><code>SMTP_HOST</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>SMTP server hostname</td>
+</tr>
+<tr>
+<td><code>SMTP_PORT</code></td>
+<td><code>int</code></td>
+<td><em>required</em></td>
+<td>SMTP server port</td>
+</tr>
+<tr>
+<td><code>SMTP_USER</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>SMTP username</td>
+</tr>
+<tr>
+<td><code>SMTP_PASSWORD</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>SMTP password</td>
+</tr>
+<tr>
+<td><code>EMAIL_FROM</code></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+<td>Sender email address</td>
+</tr>
+<tr>
+<td><code>EMAIL_FROM_NAME</code></td>
+<td><code>str</code></td>
+<td><code>MiniMart</code></td>
+<td>Sender display name</td>
+</tr>
+<tr>
+<td><code>OTP_EXPIRE_MINUTES</code></td>
+<td><code>int</code></td>
+<td><em>required</em></td>
+<td>OTP expiry in minutes</td>
+</tr>
+<tr>
+<td><code>OTP_LENGTH</code></td>
+<td><code>int</code></td>
+<td><em>required</em></td>
+<td>OTP digit count</td>
+</tr>
+<tr>
+<td><code>RATE_LIMIT_AUTH</code></td>
+<td><code>str</code></td>
+<td><code>5/minute</code></td>
+<td>Auth endpoint rate limit</td>
+</tr>
+<tr>
+<td><code>RATE_LIMIT_INVITATION</code></td>
+<td><code>str</code></td>
+<td><code>10/hour</code></td>
+<td>Invitation rate limit</td>
+</tr>
+<tr>
+<td><code>RATE_LIMIT_API</code></td>
+<td><code>str</code></td>
+<td><code>100/minute</code></td>
+<td>General API rate limit</td>
+</tr>
+<tr>
+<td><code>CORS_ORIGINS</code></td>
+<td><code>list[str]</code></td>
+<td><code>["http://localhost:3000","http://localhost:8000"]</code></td>
+<td>Allowed CORS origins</td>
+</tr>
+</tbody>
+</table>
+<h3 id="environment-dependent-behavior">Environment-Dependent Behavior</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><code>development</code></th>
+<th><code>production</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swagger UI (<code>/docs</code>)</td>
+<td>✅ Enabled</td>
+<td>❌ Disabled</td>
+</tr>
+<tr>
+<td>ReDoc (<code>/redoc</code>)</td>
+<td>✅ Enabled</td>
+<td>❌ Disabled</td>
+</tr>
+<tr>
+<td>Auto DB init</td>
+<td>✅ <code>init_db()</code> on startup</td>
+<td>❌ Manual migrations only</td>
+</tr>
+<tr>
+<td>Hot reload</td>
+<td>✅ Uvicorn <code>reload=True</code></td>
+<td>❌ Disabled</td>
+</tr>
+<tr>
+<td>WS test pages</td>
+<td>✅ <code>/test/chat</code>, <code>/test/notifications</code></td>
+<td>❌ Not registered</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="5-data-model">5. Data Model</h2>
+<h3 id="51-base-model">5.1 Base Model</h3>
+<p>All entities inherit from <code>BaseModel</code> which provides:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>UUID</code> (UUIDv7)</td>
+<td>Time-ordered primary key</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>datetime</code> (tz)</td>
+<td>Auto-set on creation</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>datetime</code> (tz)</td>
+<td>Auto-updated on modification</td>
+</tr>
+<tr>
+<td><code>deleted_at</code></td>
+<td><code>datetime?</code> (tz)</td>
+<td>Soft-delete timestamp (<code>NULL</code> = active)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-entity-relationship-diagram">5.2 Entity Relationship Diagram</h3>
+<div class="mermaid">erDiagram
+    Tenant ||--o{ User : "has many"
+    Tenant ||--o{ ShoppingList : "has many"
+    User ||--o{ ShoppingList : "owns"
+    User ||--o{ ShoppingListMember : "memberships"
+    User ||--o{ Item : "added items"
+    User ||--o{ ChatMessage : "sent messages"
+    User ||--o{ Notification : "receives"
+    User ||--o{ ShoppingListInvite : "sent invitations"
+    User ||--o{ ShoppingListInvite : "received invitations"
+    ShoppingList ||--o{ ShoppingListMember : "members"
+    ShoppingList ||--o{ Item : "items"
+    ShoppingList ||--o{ ChatMessage : "messages"
+    ShoppingList ||--o{ Notification : "notifications"
+    ShoppingList ||--o{ ShoppingListInvite : "invitations"
+
+    Tenant {
+        UUID id PK
+        String name
+        String slug UK
+        Boolean is_active
+    }
+
+    User {
+        UUID id PK
+        UUID tenant_id FK
+        String first_name
+        String last_name
+        String username
+        String email
+        String password
+        UserRole role
+        Boolean is_email_verified
+        Boolean is_active
+    }
+
+    ShoppingList {
+        UUID id PK
+        UUID tenant_id FK
+        UUID owner_id FK
+        String name
+    }
+
+    ShoppingListMember {
+        UUID id PK
+        UUID shopping_list_id FK
+        UUID user_id FK
+        MemberRole role
+        Boolean can_view
+        Boolean can_add_item
+        Boolean can_update_item
+        Boolean can_delete_item
+        Datetime joined_at
+    }
+
+    Item {
+        UUID id PK
+        UUID shopping_list_id FK
+        UUID added_by FK
+        UUID updated_by FK
+        UUID deleted_by FK
+        String name
+        Integer quantity
+        ItemStatus status
+    }
+
+    ChatMessage {
+        UUID id PK
+        UUID shopping_list_id FK
+        UUID sender_id FK
+        String content
+    }
+
+    Notification {
+        UUID id PK
+        UUID user_id FK
+        UUID shopping_list_id FK
+        NotificationType type
+        JSONB payload
+        Boolean is_read
+    }
+
+    ShoppingListInvite {
+        UUID id PK
+        UUID shopping_list_id FK
+        UUID invited_user_id FK
+        UUID invited_by_user_id FK
+        String token UK
+        InviteStatus status
+        Datetime expires_at
+        Datetime accepted_at
+        Datetime rejected_at
+        Datetime cancelled_at
+        Datetime resent_at
+    }
+
+    BlacklistedToken {
+        UUID id PK
+        String token_id UK
+        String user_id
+        Datetime expires_at
+    }
+</div>
+<h3 id="53-model-details">5.3 Model Details</h3>
+<h4 id="tenant">Tenant</h4>
+<ul>
+<li><strong>Table</strong>: <code>tenants</code></li>
+<li><strong>Constraints</strong>: <code>slug</code> is unique and indexed.</li>
+<li><strong>Relationships</strong>: <code>users</code> (cascade), <code>shopping_lists</code> (cascade).</li>
+</ul>
+<h4 id="user">User</h4>
+<ul>
+<li><strong>Table</strong>: <code>users</code></li>
+<li><strong>Constraints</strong>: <code>(tenant_id, username)</code> unique, <code>(tenant_id, email)</code> unique.</li>
+<li><strong>Notes</strong>: <code>tenant_id</code> is nullable to support Super Admins without tenant affiliation.</li>
+<li><strong>Relationships</strong>: <code>tenant</code>, <code>owned_lists</code>, <code>list_memberships</code> (cascade), <code>added_items</code>, <code>sent_messages</code> (cascade), <code>notifications</code> (cascade), <code>sent_invitations</code> (cascade), <code>received_invitations</code> (cascade).</li>
+</ul>
+<h4 id="shoppinglist">ShoppingList</h4>
+<ul>
+<li><strong>Table</strong>: <code>shopping_lists</code></li>
+<li><strong>Indexes</strong>: <code>tenant_id</code>, <code>owner_id</code>, <code>created_at</code>.</li>
+<li><strong>Computed Properties</strong>: <code>item_count</code>, <code>pending_count</code>, <code>purchased_count</code>, <code>member_count</code>, <code>role</code> (dynamically attached by service).</li>
+<li><strong>Relationships</strong>: <code>tenant</code>, <code>owner</code>, <code>members</code> (cascade), <code>items</code> (cascade, ordered by <code>created_at</code>), <code>chat_messages</code> (cascade, ordered by <code>created_at</code>), <code>notifications</code> (cascade), <code>invites</code> (cascade).</li>
+</ul>
+<h4 id="shoppinglistmember">ShoppingListMember</h4>
+<ul>
+<li><strong>Table</strong>: <code>shopping_list_members</code></li>
+<li><strong>Constraints</strong>: <code>(shopping_list_id, user_id)</code> unique.</li>
+<li><strong>Permission Flags</strong>: <code>can_view</code> (default: <code>true</code>), <code>can_add_item</code> (default: <code>false</code>), <code>can_update_item</code> (default: <code>false</code>), <code>can_delete_item</code> (default: <code>false</code>).</li>
+<li><strong>Computed Properties</strong>: <code>username</code>, <code>email</code>, <code>is_owner</code>.</li>
+</ul>
+<h4 id="item">Item</h4>
+<ul>
+<li><strong>Table</strong>: <code>items</code></li>
+<li><strong>Constraints</strong>: <code>quantity &gt;= 1</code> (check constraint).</li>
+<li><strong>Audit Fields</strong>: <code>added_by</code>, <code>updated_by</code>, <code>deleted_by</code> (all nullable, <code>SET NULL</code> on user deletion).</li>
+<li><strong>Defaults</strong>: <code>quantity = 1</code>, <code>status = PENDING</code>.</li>
+</ul>
+<h4 id="chatmessage">ChatMessage</h4>
+<ul>
+<li><strong>Table</strong>: <code>chat_messages</code></li>
+<li><strong>Constraints</strong>: <code>content</code> length ≤ 2000 (check constraint).</li>
+<li><strong>Indexes</strong>: <code>shopping_list_id</code>, <code>sender_id</code>, composite <code>(shopping_list_id, created_at)</code>.</li>
+</ul>
+<h4 id="notification">Notification</h4>
+<ul>
+<li><strong>Table</strong>: <code>notifications</code></li>
+<li><strong>Indexes</strong>: <code>user_id</code>, composite <code>(user_id, is_read)</code>, composite <code>(user_id, created_at)</code>, composite <code>(user_id, type)</code>.</li>
+<li><strong>Fields</strong>: <code>payload</code> is a <code>JSONB</code> column for flexible notification data.</li>
+</ul>
+<h4 id="shoppinglistinvite">ShoppingListInvite</h4>
+<ul>
+<li><strong>Table</strong>: <code>shopping_list_invites</code></li>
+<li><strong>Indexes</strong>: <code>shopping_list_id</code>, <code>invited_user_id</code>, <code>invited_by_user_id</code>, <code>status</code>, <code>token</code> (unique).</li>
+<li><strong>Lifecycle Timestamps</strong>: <code>expires_at</code>, <code>accepted_at</code>, <code>rejected_at</code>, <code>cancelled_at</code>, <code>resent_at</code>.</li>
+</ul>
+<h4 id="blacklistedtoken">BlacklistedToken</h4>
+<ul>
+<li><strong>Table</strong>: <code>blacklisted_tokens</code></li>
+<li><strong>Purpose</strong>: Stores revoked JWT tokens (both access and refresh) that should be rejected even before their natural expiry.</li>
+</ul>
+<hr/>
+<h2 id="6-enumerations">6. Enumerations</h2>
+<h3 id="userrole">UserRole</h3>
+<p>Platform-level access control roles.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SUPER_ADMIN</code></td>
+<td>Platform administrator, manages tenants and tenant admins</td>
+</tr>
+<tr>
+<td><code>TENANT_ADMIN</code></td>
+<td>Tenant administrator, manages users within a tenant</td>
+</tr>
+<tr>
+<td><code>USER</code></td>
+<td>Standard user, participates in shopping lists</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memberrole">MemberRole</h3>
+<p>Shopping list membership roles.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OWNER</code></td>
+<td>List creator, full control</td>
+</tr>
+<tr>
+<td><code>MEMBER</code></td>
+<td>Invited collaborator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="itemstatus">ItemStatus</h3>
+<p>Shopping list item status.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PENDING</code></td>
+<td>Item not yet purchased</td>
+</tr>
+<tr>
+<td><code>PURCHASED</code></td>
+<td>Item has been purchased</td>
+</tr>
+</tbody>
+</table>
+<h3 id="invitestatus">InviteStatus</h3>
+<p>Invitation lifecycle states.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PENDING</code></td>
+<td>Awaiting response</td>
+</tr>
+<tr>
+<td><code>ACCEPTED</code></td>
+<td>User accepted the invitation</td>
+</tr>
+<tr>
+<td><code>REJECTED</code></td>
+<td>User rejected the invitation</td>
+</tr>
+<tr>
+<td><code>EXPIRED</code></td>
+<td>Token expired without response</td>
+</tr>
+<tr>
+<td><code>CANCELLED</code></td>
+<td>Inviter cancelled the invitation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notificationtype">NotificationType</h3>
+<p>Types of in-app notifications.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LIST_INVITE</code></td>
+<td>New list invitation received</td>
+</tr>
+<tr>
+<td><code>INVITE_ACCEPTED</code></td>
+<td>Invitation was accepted</td>
+</tr>
+<tr>
+<td><code>INVITE_REJECTED</code></td>
+<td>Invitation was rejected</td>
+</tr>
+<tr>
+<td><code>ITEM_ADDED</code></td>
+<td>New item added to a list</td>
+</tr>
+<tr>
+<td><code>ITEM_UPDATED</code></td>
+<td>Item was updated</td>
+</tr>
+<tr>
+<td><code>ITEM_DELETED</code></td>
+<td>Item was deleted</td>
+</tr>
+<tr>
+<td><code>ITEM_PURCHASED</code></td>
+<td>Item marked as purchased</td>
+</tr>
+<tr>
+<td><code>CHAT_MESSAGE</code></td>
+<td>New chat message received</td>
+</tr>
+<tr>
+<td><code>MEMBER_REMOVED</code></td>
+<td>Member removed from list</td>
+</tr>
+<tr>
+<td><code>LIST_UPDATED</code></td>
+<td>Shopping list was updated</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="7-api-specification">7. API Specification</h2>
+<p><strong>Base URL</strong>: <code>/api/v1</code></p>
+<p>All authenticated endpoints require a JWT Bearer token in the <code>Authorization</code> header.<br/>
+Tenant-scoped endpoints require the <code>Tenant-ID</code> header (<code>UUID</code>).</p>
+<h3 id="common-response-schemas">Common Response Schemas</h3>
+<p><strong>Paginated Response</strong> — Used for all list endpoints:</p>
+<pre><code class="language-json">{
+  "total": 50,
+  "page": 1,
+  "size": 20,
+  "pages": 3,
+  "data": [...]
+}
+</code></pre>
+<p><strong>Message Response</strong> — Used for action confirmations:</p>
+<pre><code class="language-json">{
+  "message": "Action completed successfully"
+}
+</code></pre>
+<h3 id="pagination-parameters">Pagination Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td><code>≥ 1</code></td>
+<td>Page number (1-based)</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td><code>1 – 100</code></td>
+<td>Items per page</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="71-authentication">7.1 Authentication</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/auth</code><br/>
+<strong>Tag</strong>: <code>Auth</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Headers</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/login</code></td>
+<td>❌</td>
+<td><code>Tenant-ID?</code></td>
+<td>200</td>
+<td>Login with email &amp; password</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/signup</code></td>
+<td>❌</td>
+<td><code>Tenant-ID</code></td>
+<td>201</td>
+<td>Register a new user</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/logout</code></td>
+<td>✅</td>
+<td>—</td>
+<td>200</td>
+<td>Blacklist access + refresh tokens</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/verify-email</code></td>
+<td>❌</td>
+<td><code>Tenant-ID</code></td>
+<td>200</td>
+<td>Verify email with OTP</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/resend-otp</code></td>
+<td>❌</td>
+<td><code>Tenant-ID</code></td>
+<td>200</td>
+<td>Resend verification OTP</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/refresh</code></td>
+<td>❌</td>
+<td>—</td>
+<td>200</td>
+<td>Refresh access + refresh tokens</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/change-password</code></td>
+<td>✅</td>
+<td>—</td>
+<td>200</td>
+<td>Change current user's password</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/forgot-password</code></td>
+<td>❌</td>
+<td><code>Tenant-ID?</code></td>
+<td>200</td>
+<td>Request password reset email</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/reset-password</code></td>
+<td>❌</td>
+<td>—</td>
+<td>200</td>
+<td>Reset password with reset token</td>
+</tr>
+</tbody>
+</table>
+<h4 id="requestresponse-bodies">Request/Response Bodies</h4>
+<details>
+<summary><strong>POST /login</strong></summary>
+
+**Request:**
+
+<pre><code class="language-json">{
+  "email": "user@example.com",
+  "password": "securepassword"
+}
+</code></pre>
+
+
+**Response (`LoginResponse`):**
+
+<pre><code class="language-json">{
+  "access_token": "eyJhbGciOi...",
+  "refresh_token": "eyJhbGciOi..."
+}
+</code></pre>
+</details>
+<details>
+<summary><strong>POST /signup</strong></summary>
+
+**Request:**
+
+<pre><code class="language-json">{
+  "email": "user@example.com",
+  "username": "johndoe",
+  "first_name": "John",
+  "last_name": "Doe",
+  "password": "SecurePass123"
+}
+</code></pre>
+
+
+**Response:** `MessageResponse` — `"Signup successful. Please verify your email."`
+</details>
+<details>
+<summary><strong>POST /verify-email</strong></summary>
+
+**Request:**
+
+<pre><code class="language-json">{
+  "email": "user@example.com",
+  "otp": "123456"
+}
+</code></pre>
+</details>
+<details>
+<summary><strong>POST /logout</strong></summary>
+
+**Request:**
+
+<pre><code class="language-json">{
+  "refresh_token": "eyJhbGciOi..."
+}
+</code></pre>
+</details>
+<details>
+<summary><strong>POST /change-password</strong></summary>
+
+**Request:**
+
+<pre><code class="language-json">{
+  "current_password": "OldPass123",
+  "new_password": "NewPass456"
+}
+</code></pre>
+</details>
+<details>
+<summary><strong>POST /reset-password</strong></summary>
+
+**Request:**
+
+<pre><code class="language-json">{
+  "token": "eyJhbGciOi...",
+  "new_password": "NewPass456",
+  "confirm_password": "NewPass456"
+}
+</code></pre>
+</details>
+<hr/>
+<h3 id="72-users">7.2 Users</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/users</code><br/>
+<strong>Tag</strong>: <code>Users</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Role Required</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td><code>TENANT_ADMIN</code> / <code>SUPER_ADMIN</code></td>
+<td>201</td>
+<td>Create a new user</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td><code>TENANT_ADMIN</code> / <code>SUPER_ADMIN</code></td>
+<td>200</td>
+<td>List users (paginated)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/{user_id}</code></td>
+<td>✅</td>
+<td>Verified user</td>
+<td>200</td>
+<td>Get user details</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{user_id}</code></td>
+<td>✅</td>
+<td>Verified user</td>
+<td>200</td>
+<td>Update user profile</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/{user_id}</code></td>
+<td>✅</td>
+<td>Verified user</td>
+<td>204</td>
+<td>Deactivate user (soft delete)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Role Behavior</strong>:
+- <code>SUPER_ADMIN</code> creates <code>TENANT_ADMIN</code> users (no tenant constraint).
+- <code>TENANT_ADMIN</code> creates <code>USER</code> users (auto-assigns their tenant).
+- <code>SUPER_ADMIN</code> sees all users; <code>TENANT_ADMIN</code> sees only their tenant's users.
+- Admins see <code>UserAdminResponse</code>; regular users see <code>UserResponse</code>.</p>
+<hr/>
+<h3 id="73-tenants">7.3 Tenants</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/tenants</code><br/>
+<strong>Tag</strong>: <code>Tenants</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Role Required</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td><code>SUPER_ADMIN</code></td>
+<td>201</td>
+<td>Create a new tenant</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td><code>SUPER_ADMIN</code></td>
+<td>200</td>
+<td>List tenants (paginated)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/{tenant_id}</code></td>
+<td>✅</td>
+<td><code>SUPER_ADMIN</code></td>
+<td>200</td>
+<td>Get tenant details</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{tenant_id}</code></td>
+<td>✅</td>
+<td><code>SUPER_ADMIN</code></td>
+<td>200</td>
+<td>Update tenant</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/{tenant_id}</code></td>
+<td>✅</td>
+<td><code>SUPER_ADMIN</code></td>
+<td>204</td>
+<td>Soft delete tenant</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="74-shopping-lists">7.4 Shopping Lists</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/shopping-lists</code><br/>
+<strong>Tag</strong>: <code>Shopping Lists</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td>201</td>
+<td>Create a shopping list</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td>200</td>
+<td>List user's shopping lists (paginated)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/{list_id}</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Get list with members and items</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{list_id}</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Update shopping list name</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/{list_id}</code></td>
+<td>✅</td>
+<td>204</td>
+<td>Delete shopping list</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/{list_id}/members</code></td>
+<td>✅</td>
+<td>200</td>
+<td>List members (paginated)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/{list_id}/members/{user_id}</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Remove a member</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{list_id}/members/{user_id}</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Update member permissions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="member-permissions-update">Member Permissions Update</h4>
+<pre><code class="language-json">{
+  "can_view": true,
+  "can_add_item": true,
+  "can_update_item": false,
+  "can_delete_item": false
+}
+</code></pre>
+<hr/>
+<h3 id="75-items">7.5 Items</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/shopping-lists</code><br/>
+<strong>Tag</strong>: <code>Items</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/{list_id}/items</code></td>
+<td>✅</td>
+<td>201</td>
+<td>Add item to list</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/{list_id}/items</code></td>
+<td>✅</td>
+<td>200</td>
+<td>List items (paginated, filterable)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/{list_id}/items/{item_id}</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Get specific item</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{list_id}/items/{item_id}</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Update item</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{list_id}/items/{item_id}/status</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Quick status toggle</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/{list_id}/items/{item_id}</code></td>
+<td>✅</td>
+<td>204</td>
+<td>Delete item</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters</strong> (GET <code>/{list_id}/items</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td><code>ItemStatus?</code></td>
+<td>Filter by <code>PENDING</code> or <code>PURCHASED</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="76-invitations">7.6 Invitations</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/invitations</code> (actions) + <code>/api/v1/shopping-lists</code> (management)<br/>
+<strong>Tag</strong>: <code>Invitations</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/invitations/accept</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Accept invitation by token</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/invitations/reject</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Reject invitation by token</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/invitations/{invite_id}</code></td>
+<td>✅</td>
+<td>204</td>
+<td>Cancel a pending invitation</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/invitations/{invite_id}/resend</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Resend invitation email</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/shopping-lists/invites</code></td>
+<td>✅</td>
+<td>200</td>
+<td>List all user's invitations</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/shopping-lists/{list_id}/invite</code></td>
+<td>✅</td>
+<td>201</td>
+<td>Invite user to list</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/shopping-lists/{list_id}/invites</code></td>
+<td>✅</td>
+<td>200</td>
+<td>List invitations for a list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters</strong> (GET invite lists):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td><code>str?</code></td>
+<td>Filter: <code>PENDING</code>, <code>ACCEPTED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, <code>EXPIRED</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="77-chat">7.7 Chat</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/shopping-lists</code><br/>
+<strong>Tag</strong>: <code>Chat</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/{list_id}/messages</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Load chat history (reverse chronological, paginated)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/{list_id}/messages</code></td>
+<td>✅</td>
+<td>201</td>
+<td>Send a chat message (REST fallback)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/{list_id}/messages/{message_id}</code></td>
+<td>✅</td>
+<td>204</td>
+<td>Soft-delete a message</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="78-notifications">7.8 Notifications</h3>
+<p><strong>Prefix</strong>: <code>/api/v1/notifications</code><br/>
+<strong>Tag</strong>: <code>Notifications</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>✅</td>
+<td>200</td>
+<td>List notifications (paginated, filterable)</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/{notification_id}/read</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Mark notification as read</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/read-all</code></td>
+<td>✅</td>
+<td>200</td>
+<td>Mark all unread as read</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters</strong> (GET):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_read</code></td>
+<td><code>bool?</code></td>
+<td>Filter by read/unread status</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="79-health">7.9 Health</h3>
+<p><strong>Prefix</strong>: <code>/health</code><br/>
+<strong>Tag</strong>: <code>Health</code></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>❌</td>
+<td>200</td>
+<td>Liveness check (always responds)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/ready</code></td>
+<td>❌</td>
+<td>200/503</td>
+<td>Readiness check (DB + Redis connectivity)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="8-websocket-protocol">8. WebSocket Protocol</h2>
+<p>MiniMart uses two WebSocket endpoints with distinct scopes.</p>
+<h3 id="81-global-websocket-ws">8.1 Global WebSocket — <code>/ws</code></h3>
+<p><strong>Connection</strong>: <code>ws://host/ws?token=&lt;jwt_access_token&gt;</code></p>
+<p><strong>Purpose</strong>: Receives real-time events for subscribed lists and notifications.</p>
+<p><strong>Scope</strong>: <code>global</code> — This connection receives list events (for subscribed lists) and notifications.</p>
+<h4 id="client-server-messages">Client → Server Messages</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subscribe</code></td>
+<td><code>{ "list_id": "&lt;uuid&gt;" }</code></td>
+<td>Subscribe to list events</td>
+</tr>
+<tr>
+<td><code>unsubscribe</code></td>
+<td><code>{ "list_id": "&lt;uuid&gt;" }</code></td>
+<td>Unsubscribe from list events</td>
+</tr>
+<tr>
+<td><code>ping</code></td>
+<td><code>{}</code></td>
+<td>Keep-alive ping</td>
+</tr>
+</tbody>
+</table>
+<h4 id="server-client-messages">Server → Client Messages</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>connected</code></td>
+<td><code>{}</code></td>
+<td>Connection confirmation</td>
+</tr>
+<tr>
+<td><code>subscribed</code></td>
+<td><code>{ "list_id": "&lt;uuid&gt;" }</code></td>
+<td>Subscription confirmed</td>
+</tr>
+<tr>
+<td><code>unsubscribed</code></td>
+<td><code>{ "list_id": "&lt;uuid&gt;" }</code></td>
+<td>Unsubscription confirmed</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>{ "event": "&lt;type&gt;", "list_id": "&lt;uuid&gt;", "data": {} }</code></td>
+<td>List event broadcast</td>
+</tr>
+<tr>
+<td><code>notification</code></td>
+<td><code>{ "id", "type", "data", "list_id", "created_at" }</code></td>
+<td>Notification delivery</td>
+</tr>
+<tr>
+<td><code>kicked</code></td>
+<td><code>{ "list_id": "&lt;uuid&gt;", "reason": "..." }</code></td>
+<td>User kicked from list</td>
+</tr>
+<tr>
+<td><code>pong</code></td>
+<td><code>{}</code></td>
+<td>Ping response</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>{ "message": "..." }</code></td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-chat-websocket-wsshopping-listslist_idchat">8.2 Chat WebSocket — <code>/ws/shopping-lists/{list_id}/chat</code></h3>
+<p><strong>Connection</strong>: <code>ws://host/ws/shopping-lists/{list_id}/chat?token=&lt;jwt_access_token&gt;</code></p>
+<p><strong>Purpose</strong>: Dedicated real-time chat for a specific shopping list.</p>
+<p><strong>Scope</strong>: <code>chat:{list_id}</code> — This connection only receives chat messages for the specified list. <strong>Does NOT receive notifications.</strong></p>
+<h4 id="client-server-messages_1">Client → Server Messages</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chat_message</code></td>
+<td><code>{ "message": "..." }</code></td>
+<td>Send a chat message</td>
+</tr>
+<tr>
+<td><code>ping</code></td>
+<td><code>{}</code></td>
+<td>Keep-alive ping</td>
+</tr>
+</tbody>
+</table>
+<h4 id="server-client-messages_1">Server → Client Messages</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>connected</code></td>
+<td><code>{ "list_id": "&lt;uuid&gt;" }</code></td>
+<td>Connection confirmation</td>
+</tr>
+<tr>
+<td><code>chat_message</code></td>
+<td><code>{ "id", "sender_id", "sender_name", "message", ... }</code></td>
+<td>Chat message broadcast</td>
+</tr>
+<tr>
+<td><code>pong</code></td>
+<td><code>{}</code></td>
+<td>Ping response</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>{ "message": "..." }</code></td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-connection-manager-architecture">8.3 Connection Manager Architecture</h3>
+<p>The <code>ConnectionManager</code> is an in-memory singleton managing:</p>
+<ul>
+<li><strong><code>active_connections</code></strong>: <code>{ user_id → { WebSocket → scope } }</code> — Tracks all connections per user with their scope.</li>
+<li><strong><code>list_subscribers</code></strong>: <code>{ list_id → Set[(user_id, WebSocket)] }</code> — Tracks which connections are subscribed to which lists.</li>
+<li><strong><code>connection_subscriptions</code></strong>: <code>{ (user_id, WebSocket) → Set[list_id] }</code> — Reverse mapping for quick cleanup on disconnect.</li>
+</ul>
+<h4 id="key-behaviors">Key Behaviors</h4>
+<ol>
+<li><strong>Notification isolation</strong>: Notifications are only delivered to <code>global</code> scoped connections, never to <code>chat:{list_id}</code> scoped connections.</li>
+<li><strong>Subscription-based suppression</strong>: If a user has an active subscription to a list, notifications about that list are suppressed (they already see the events).</li>
+<li><strong>Member removal handling</strong>: When a member is removed/leaves, the manager sends a <code>kicked</code> event to the user, closes their scoped connections, and unsubscribes them from the list.</li>
+<li><strong>Logout cleanup</strong>: <code>disconnect_all_for_user()</code> closes all WebSocket connections for a user immediately with close code <code>4001</code>.</li>
+</ol>
+<hr/>
+<h2 id="9-security-authentication">9. Security &amp; Authentication</h2>
+<h3 id="91-password-security">9.1 Password Security</h3>
+<ul>
+<li><strong>Algorithm</strong>: Argon2 (via <code>argon2-cffi</code>)</li>
+<li><strong>Policy</strong>:</li>
+<li>Minimum length: 8 characters</li>
+<li>Maximum length: 128 characters</li>
+<li>Must contain: uppercase, lowercase, digit</li>
+</ul>
+<h3 id="92-jwt-token-types">9.2 JWT Token Types</h3>
+<table>
+<thead>
+<tr>
+<th>Token Type</th>
+<th><code>type</code> Claim</th>
+<th>Expiry</th>
+<th>Contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Access</strong></td>
+<td><code>access</code></td>
+<td>Configurable (minutes)</td>
+<td><code>sub</code>, <code>tenant_id</code>, <code>role</code>, <code>email</code>, <code>jti</code></td>
+</tr>
+<tr>
+<td><strong>Refresh</strong></td>
+<td><code>refresh</code></td>
+<td>Configurable (days)</td>
+<td><code>sub</code>, <code>tenant_id</code>, <code>jti</code></td>
+</tr>
+<tr>
+<td><strong>Invitation</strong></td>
+<td><code>list_invite</code></td>
+<td>Configurable (hours)</td>
+<td><code>list_id</code>, <code>email</code>, <code>tenant_id</code>, <code>inviter_id</code>, <code>jti</code></td>
+</tr>
+<tr>
+<td><strong>Password Reset</strong></td>
+<td><code>password_reset</code></td>
+<td>15 minutes (hardcoded)</td>
+<td><code>sub</code>, <code>tenant_id</code>, <code>jti</code></td>
+</tr>
+</tbody>
+</table>
+<p>All tokens use <code>HS256</code> algorithm and include <code>iat</code> (issued at) and <code>exp</code> (expiration) claims.</p>
+<h3 id="93-token-blacklisting">9.3 Token Blacklisting</h3>
+<p>Tokens are blacklisted on logout using Redis with TTL matching the token's remaining expiry:</p>
+<ul>
+<li><strong>Access tokens</strong>: Redis key <code>blacklist:access:{jti}</code> — Checked on every authenticated request and WebSocket connection.</li>
+<li><strong>Refresh tokens</strong>: Redis key <code>blacklist:{jti}</code> — Checked on token refresh.</li>
+</ul>
+<h3 id="94-otp-flow">9.4 OTP Flow</h3>
+<ol>
+<li>On signup, a 6-digit OTP is generated and stored in Redis (<code>otp:{tenant_id}:{email}</code>).</li>
+<li>OTP is sent to the user's email via async SMTP.</li>
+<li>User submits OTP via <code>/verify-email</code> endpoint.</li>
+<li>On success, <code>is_email_verified</code> is set to <code>true</code> and OTP is deleted from Redis.</li>
+</ol>
+<h3 id="95-input-normalization">9.5 Input Normalization</h3>
+<p>All request schemas inherit from <code>NormalizedModel</code> which:
+- <strong>Strips</strong> whitespace from all string fields.
+- <strong>Lowercases</strong> all string fields except: <code>password</code>, <code>token</code>, <code>otp</code>, <code>role</code>, <code>status</code>, <code>type</code>, etc. (defined in <code>NORMALIZATION_BYPASS_FIELDS</code>).</p>
+<hr/>
+<h2 id="10-permission-matrix">10. Permission Matrix</h2>
+<h3 id="101-platform-level-roles">10.1 Platform-Level Roles</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th style="text-align: center;"><code>SUPER_ADMIN</code></th>
+<th style="text-align: center;"><code>TENANT_ADMIN</code></th>
+<th style="text-align: center;"><code>USER</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create tenant</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Manage tenants (CRUD)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Create <code>TENANT_ADMIN</code> user</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Create <code>USER</code></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>List all users</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>List tenant users</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>View user (admin detail)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>View user (basic)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-shopping-list-roles">10.2 Shopping List Roles</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th style="text-align: center;"><code>OWNER</code></th>
+<th style="text-align: center;"><code>MEMBER</code> (w/ permission)</th>
+<th style="text-align: center;"><code>MEMBER</code> (default)</th>
+<th style="text-align: center;"><code>TENANT_ADMIN</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create list</td>
+<td style="text-align: center;">✅ (auto-assigned)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>View list</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅ (<code>can_view</code>)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Update list</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Delete list</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Add items</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅ (<code>can_add_item</code>)</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Update items</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅ (<code>can_update_item</code>)</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Delete items</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅ (<code>can_delete_item</code>)</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Invite members</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Remove members</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Update member permissions</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ (elevated)</td>
+</tr>
+<tr>
+<td>Leave list</td>
+<td style="text-align: center;">❌ (is owner)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="11-real-time-event-system">11. Real-Time Event System</h2>
+<h3 id="111-websocket-event-types">11.1 WebSocket Event Types</h3>
+<p>Events are broadcast to all subscribed connections via the <code>broadcast_event</code> method.</p>
+<table>
+<thead>
+<tr>
+<th>Event Constant</th>
+<th>Value</th>
+<th>Triggered By</th>
+<th>Payload Includes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WS_EVENT_ITEM_ADDED</code></td>
+<td><code>item_added</code></td>
+<td>Add item</td>
+<td>Item details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_ITEM_UPDATED</code></td>
+<td><code>item_updated</code></td>
+<td>Update item</td>
+<td>Updated item details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_ITEM_DELETED</code></td>
+<td><code>item_deleted</code></td>
+<td>Delete item</td>
+<td>Item ID</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_MEMBER_JOINED</code></td>
+<td><code>member_joined</code></td>
+<td>Accept invitation</td>
+<td>Member details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_MEMBER_REMOVED</code></td>
+<td><code>member_removed</code></td>
+<td>Remove member</td>
+<td>User ID, kicks user</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_MEMBER_LEFT</code></td>
+<td><code>member_left</code></td>
+<td>Leave list</td>
+<td>User ID, kicks user</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_INVITE_CREATED</code></td>
+<td><code>invite_created</code></td>
+<td>Send invitation</td>
+<td>Invite details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_INVITE_ACCEPTED</code></td>
+<td><code>invite_accepted</code></td>
+<td>Accept invitation</td>
+<td>Invite details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_INVITE_REJECTED</code></td>
+<td><code>invite_rejected</code></td>
+<td>Reject invitation</td>
+<td>Invite details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_INVITE_CANCELLED</code></td>
+<td><code>invite_cancelled</code></td>
+<td>Cancel invitation</td>
+<td>Invite details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_LIST_UPDATED</code></td>
+<td><code>list_updated</code></td>
+<td>Update list</td>
+<td>Updated list details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_LIST_DELETED</code></td>
+<td><code>list_deleted</code></td>
+<td>Delete list</td>
+<td>List ID</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_CHAT_MESSAGE</code></td>
+<td><code>chat_message</code></td>
+<td>Send chat message</td>
+<td>Message details</td>
+</tr>
+<tr>
+<td><code>WS_EVENT_PERMISSIONS_UPDATED</code></td>
+<td><code>permissions_updated</code></td>
+<td>Update permissions</td>
+<td>Permission details</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-event-delivery-rules">11.2 Event Delivery Rules</h3>
+<ol>
+<li><strong>List events</strong> → Delivered to all subscribed connections for the list.</li>
+<li><strong>Chat messages</strong> → Delivered only to <code>chat:{list_id}</code> scoped connections (<code>only_scoped: true</code>).</li>
+<li><strong>Notifications</strong> → Delivered only to <code>global</code> scoped connections, excluding connections subscribed to the related list.</li>
+<li><strong>Actor inclusion</strong> → The user performing the action <strong>does</strong> receive the event broadcast (for dashboard synchronization). They do <strong>not</strong> receive the notification (they're the actor).</li>
+</ol>
+<hr/>
+<h2 id="12-redis-service">12. Redis Service</h2>
+<p>The <code>RedisService</code> is a class-level singleton with two connection pools:</p>
+<table>
+<thead>
+<tr>
+<th>Pool</th>
+<th>Config</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main</strong></td>
+<td><code>REDIS_URL</code> (DB 0)</td>
+<td>General cache and pub/sub (reserved for future use)</td>
+</tr>
+<tr>
+<td><strong>Token</strong></td>
+<td><code>REDIS_URL</code> (DB 1)</td>
+<td>OTP, token blacklisting, invitation tokens, password resets</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-patterns">Key Patterns</h3>
+<table>
+<thead>
+<tr>
+<th>Key Pattern</th>
+<th>TTL</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>otp:{tenant_id}:{email}</code></td>
+<td><code>OTP_EXPIRE_MINUTES</code></td>
+<td>Email verification OTP</td>
+</tr>
+<tr>
+<td><code>invite:{jti}</code></td>
+<td><code>INVITATION_TOKEN_EXPIRE_HOURS</code></td>
+<td>Invitation token validation</td>
+</tr>
+<tr>
+<td><code>blacklist:{jti}</code></td>
+<td>Remaining token TTL</td>
+<td>Refresh token blacklist</td>
+</tr>
+<tr>
+<td><code>blacklist:access:{jti}</code></td>
+<td>Remaining token TTL</td>
+<td>Access token blacklist</td>
+</tr>
+<tr>
+<td><code>password_reset:{user_id}</code></td>
+<td>15 minutes</td>
+<td>One-at-a-time password reset JTI</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="13-error-handling">13. Error Handling</h2>
+<h3 id="exception-hierarchy">Exception Hierarchy</h3>
+<pre><code>MiniMartException (base)
+├── UnauthorizedException (401)
+├── CredentialsException (401)
+├── EmailNotVerifiedException (403)
+├── ForbiddenException (403)
+├── InvitationExpiredException (400)
+├── InvitationAlreadyUsedException (400)
+├── NotFoundException (404)
+├── ConflictException (409)
+├── TenantInactiveException (403)
+├── RateLimitException (429)
+└── ValidationException (422)
+</code></pre>
+<h3 id="error-response-format">Error Response Format</h3>
+<pre><code class="language-json">{
+  "success": false,
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human-readable error message",
+    "details": {}
+  }
+}
+</code></pre>
+<h3 id="websocket-close-codes">WebSocket Close Codes</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Constant</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4001</code></td>
+<td><code>WS_CLOSE_AUTH_FAILED</code></td>
+<td>Authentication failed / token revoked</td>
+</tr>
+<tr>
+<td><code>4003</code></td>
+<td><code>WS_CLOSE_FORBIDDEN</code></td>
+<td>Not a member / access denied</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="14-schemas-reference">14. Schemas Reference</h2>
+<h3 id="auth-schemas">Auth Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LoginRequest</code></td>
+<td>Request</td>
+<td><code>email</code> (EmailStr), <code>password</code> (1–128 chars)</td>
+</tr>
+<tr>
+<td><code>LoginResponse</code></td>
+<td>Response</td>
+<td><code>access_token</code>, <code>refresh_token</code></td>
+</tr>
+<tr>
+<td><code>SignupRequest</code></td>
+<td>Request</td>
+<td><code>email</code>, <code>username</code> (3–100, alphanumeric+underscore), <code>first_name</code>, <code>last_name</code>, <code>password</code> (8–128)</td>
+</tr>
+<tr>
+<td><code>LogoutRequest</code></td>
+<td>Request</td>
+<td><code>refresh_token</code></td>
+</tr>
+<tr>
+<td><code>RefreshTokenRequest</code></td>
+<td>Request</td>
+<td><code>refresh_token</code></td>
+</tr>
+<tr>
+<td><code>VerifyEmailRequest</code></td>
+<td>Request</td>
+<td><code>email</code>, <code>otp</code> (6 digits)</td>
+</tr>
+<tr>
+<td><code>ResendOtpRequest</code></td>
+<td>Request</td>
+<td><code>email</code></td>
+</tr>
+<tr>
+<td><code>OTPResponse</code></td>
+<td>Response</td>
+<td><code>message</code>, <code>expires_in</code> (seconds)</td>
+</tr>
+<tr>
+<td><code>PasswordResetRequest</code></td>
+<td>Request</td>
+<td><code>email</code></td>
+</tr>
+<tr>
+<td><code>PasswordResetConfirm</code></td>
+<td>Request</td>
+<td><code>token</code>, <code>new_password</code>, <code>confirm_password</code></td>
+</tr>
+<tr>
+<td><code>ChangePasswordRequest</code></td>
+<td>Request</td>
+<td><code>current_password</code>, <code>new_password</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-schemas">User Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UserCreate</code></td>
+<td>Request</td>
+<td><code>email</code>, <code>username</code>, <code>first_name</code>, <code>last_name</code>, <code>password</code>, <code>tenant_id?</code></td>
+</tr>
+<tr>
+<td><code>UserUpdate</code></td>
+<td>Request</td>
+<td><code>username?</code>, <code>first_name?</code>, <code>last_name?</code>, <code>is_active?</code>, <code>deleted_at?</code></td>
+</tr>
+<tr>
+<td><code>UserResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>email</code>, <code>username</code>, <code>first_name</code>, <code>last_name</code>, <code>tenant_id?</code></td>
+</tr>
+<tr>
+<td><code>UserAdminResponse</code></td>
+<td>Response</td>
+<td>Extends <code>UserResponse</code> + <code>role</code>, <code>is_email_verified</code>, <code>is_active</code>, <code>deleted_at?</code>, <code>created_at</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tenant-schemas">Tenant Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TenantCreate</code></td>
+<td>Request</td>
+<td><code>name</code>, <code>slug</code> (lowercase, hyphens)</td>
+</tr>
+<tr>
+<td><code>TenantUpdate</code></td>
+<td>Request</td>
+<td><code>name?</code>, <code>slug?</code>, <code>is_active?</code>, <code>deleted_at?</code></td>
+</tr>
+<tr>
+<td><code>TenantResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>name</code>, <code>slug</code>, <code>created_at</code></td>
+</tr>
+<tr>
+<td><code>TenantDetailResponse</code></td>
+<td>Response</td>
+<td>Extends <code>TenantResponse</code> + <code>is_active</code>, <code>updated_at</code>, <code>deleted_at?</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="shopping-list-schemas">Shopping List Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ShoppingListCreate</code></td>
+<td>Request</td>
+<td><code>name</code></td>
+</tr>
+<tr>
+<td><code>ShoppingListUpdate</code></td>
+<td>Request</td>
+<td><code>name?</code></td>
+</tr>
+<tr>
+<td><code>ShoppingListResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>name</code>, <code>tenant_id</code>, <code>owner_id</code>, <code>created_at</code>, <code>updated_at</code></td>
+</tr>
+<tr>
+<td><code>ShoppingListDetailResponse</code></td>
+<td>Response</td>
+<td>Extends above + <code>members[]</code>, <code>items[]</code>, <code>item_count</code>, <code>pending_count</code>, <code>purchased_count</code></td>
+</tr>
+<tr>
+<td><code>ShoppingListSummaryResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>name</code>, <code>role</code>, <code>item_count</code>, <code>member_count</code>, <code>created_at</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="item-schemas">Item Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ItemCreate</code></td>
+<td>Request</td>
+<td><code>name</code>, <code>quantity</code> (default: 1, range: 1–1,000,000)</td>
+</tr>
+<tr>
+<td><code>ItemUpdate</code></td>
+<td>Request</td>
+<td><code>name?</code>, <code>quantity?</code>, <code>status?</code></td>
+</tr>
+<tr>
+<td><code>ItemStatusUpdate</code></td>
+<td>Request</td>
+<td><code>status</code> (PENDING / PURCHASED)</td>
+</tr>
+<tr>
+<td><code>ItemResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>name</code>, <code>quantity</code>, <code>shopping_list_id</code>, <code>status</code>, <code>added_by?</code>, <code>updated_by?</code>, <code>deleted_by?</code>, <code>created_at</code>, <code>updated_at</code>, <code>deleted_at?</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="invitation-schemas">Invitation Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InviteRequest</code></td>
+<td>Request</td>
+<td><code>user_id</code></td>
+</tr>
+<tr>
+<td><code>InviteResponse</code></td>
+<td>Response</td>
+<td><code>message</code>, <code>expires_at</code></td>
+</tr>
+<tr>
+<td><code>InvitationAcceptRequest</code></td>
+<td>Request</td>
+<td><code>token</code></td>
+</tr>
+<tr>
+<td><code>InvitationRejectRequest</code></td>
+<td>Request</td>
+<td><code>token</code></td>
+</tr>
+<tr>
+<td><code>InvitationResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>shopping_list_id</code>, <code>list_name?</code>, <code>invited_user_id</code>, <code>invited_email?</code>, <code>invited_username?</code>, <code>invited_by_user_id</code>, <code>invited_by_username?</code>, <code>status</code>, <code>expires_at</code>, <code>created_at</code>, <code>accepted_at?</code>, <code>rejected_at?</code>, <code>cancelled_at?</code>, <code>resent_at?</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="chat-schemas">Chat Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ChatMessageRequest</code></td>
+<td>Request</td>
+<td><code>message</code> (1–2000 chars)</td>
+</tr>
+<tr>
+<td><code>ChatMessageResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>shopping_list_id</code>, <code>sender_id</code>, <code>sender_name</code>, <code>message</code>, <code>created_at</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="notification-schemas">Notification Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NotificationResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>user_id</code>, <code>shopping_list_id?</code>, <code>type</code>, <code>payload</code>, <code>is_read</code>, <code>created_at</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="member-schemas">Member Schemas</h3>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Type</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MemberResponse</code></td>
+<td>Response</td>
+<td><code>id</code>, <code>user_id</code>, <code>username</code>, <code>email</code>, <code>role</code>, <code>can_view</code>, <code>can_add_item</code>, <code>can_update_item</code>, <code>can_delete_item</code>, <code>joined_at</code></td>
+</tr>
+<tr>
+<td><code>UpdateMemberPermissions</code></td>
+<td>Request</td>
+<td><code>can_view?</code>, <code>can_add_item?</code>, <code>can_update_item?</code>, <code>can_delete_item?</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="15-constants-reference">15. Constants Reference</h2>
+<h3 id="field-length-limits">Field Length Limits</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAX_LENGTH_NAME</code></td>
+<td>255</td>
+<td>Names (user, tenant, list, item)</td>
+</tr>
+<tr>
+<td><code>MIN_LENGTH_NAME</code></td>
+<td>1</td>
+<td>Minimum name length</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_EMAIL</code></td>
+<td>255</td>
+<td>Email addresses</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_PASSWORD_HASH</code></td>
+<td>255</td>
+<td>Stored password hash length</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_PASSWORD_RAW</code></td>
+<td>128</td>
+<td>Raw password input</td>
+</tr>
+<tr>
+<td><code>MIN_LENGTH_PASSWORD</code></td>
+<td>8</td>
+<td>Minimum password length</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_TOKEN</code></td>
+<td>1024</td>
+<td>JWT token strings</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_USERNAME</code></td>
+<td>100</td>
+<td>Username field</td>
+</tr>
+<tr>
+<td><code>MIN_LENGTH_USERNAME</code></td>
+<td>3</td>
+<td>Minimum username length</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_SLUG</code></td>
+<td>100</td>
+<td>Tenant slug field</td>
+</tr>
+<tr>
+<td><code>MAX_LENGTH_UUID_STR</code></td>
+<td>36</td>
+<td>UUID string representation</td>
+</tr>
+<tr>
+<td><code>MAX_CHAT_MESSAGE_LENGTH</code></td>
+<td>2000</td>
+<td>Chat message content</td>
+</tr>
+</tbody>
+</table>
+<h3 id="item-constraints">Item Constraints</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MIN_ITEM_QUANTITY</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>MAX_ITEM_QUANTITY</code></td>
+<td>1,000,000</td>
+</tr>
+<tr>
+<td><code>DEFAULT_ITEM_QUANTITY</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pagination-defaults">Pagination Defaults</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_PAGE</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>DEFAULT_PAGE_SIZE</code></td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>MAX_PAGE_SIZE</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>MIN_PAGE_SIZE</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>DEFAULT_CHAT_LIMIT</code></td>
+<td>50</td>
+</tr>
+<tr>
+<td><code>MAX_CHAT_LIMIT</code></td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="validation-patterns">Validation Patterns</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Pattern</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>REGEX_USERNAME</code></td>
+<td><code>^[a-zA-Z0-9_]+$</code></td>
+<td>Username validation</td>
+</tr>
+<tr>
+<td><code>REGEX_SLUG</code></td>
+<td><code>^[a-z0-9-]+$</code></td>
+<td>Tenant slug validation</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><em>Generated from MiniMart v1.0.0 codebase analysis.</em></p>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
