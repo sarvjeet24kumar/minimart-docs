@@ -27,6 +27,7 @@
 | Deactivate own account | No (admins blocked) | No (admins blocked) | Yes |
 
 **Key Rules:**
+
 - **Super Admin**: Manages the tenant ecosystem and tenant admins; can only see Tenant Admin accounts, not regular users. Restricted from private shopping list data.
 - **Tenant Admin**: Full oversight of users and content within their organization. Cannot deactivate themselves.
 - **User**: Collaborative role; can only update/deactivate their own account. Cannot modify own `is_active` or `deleted_at` via update.
@@ -49,6 +50,7 @@
 | Update member permissions | No | Yes | Yes | No |
 
 **Key Rules:**
+
 - **Tenant Admin**: Has elevated (override) access to all lists within their organization. Only role that can restore deleted lists and view deleted lists.
 - **List Owner**: Full control over list membership, settings, and deletion. Cannot restore deleted lists.
 - **Members**: Can only view the list and its members. Cannot modify list settings or manage other members.
@@ -65,6 +67,7 @@
 | Delete item (soft) | No | Yes | Yes | Yes (`can_delete_item`) | No |
 
 **Key Permission Flags:**
+
 - **can_view**: Granted to all members by default. Required to view items.
 - **can_add_item**: Allows the member to contribute new items to the list.
 - **can_update_item**: Allows changing quantities, names, or marking items as purchased.
@@ -84,6 +87,7 @@
 | Reject invitation | No | No | No | Yes (Invitee) |
 
 **Key Rules:**
+
 - Cross-tenant invitations are blocked (token encodes `tenant_id`).
 - Cannot invite to or accept invites for deleted lists.
 - Duplicate membership and duplicate pending invite checks prevent spam.
