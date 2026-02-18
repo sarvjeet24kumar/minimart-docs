@@ -610,8 +610,8 @@
 <p><strong>Steps:</strong></p>
 <ul>
 <li>User creates a new shopping list (becomes the <code>OWNER</code>).</li>
-<li>User invites other organization members to the list via Email/User-ID.</li>
-<li>System generates a secure, stateless invitation token.</li>
+<li>User invites other organization members to the list via User-ID.</li>
+<li>System generates a secure invitation token.</li>
 <li>Invited user accepts the invitation and is added as a <code>MEMBER</code>.</li>
 <li><strong>Real-time Sync:</strong> All members are notified of the new list or membership change via WebSockets.</li>
 </ul>
@@ -705,7 +705,6 @@
 <li><strong>Middleware Check:</strong> Every request validates the JWT, checks for blacklisted tokens, and refreshes Tenant/User status.</li>
 <li><strong>RBAC Enforcement:</strong> System checks platform roles (<code>USER</code>, <code>TENANT_ADMIN</code>, <code>SUPER_ADMIN</code>).</li>
 <li><strong>ABAC/List Enforcement:</strong> System checks list-level role (<code>OWNER</code>, <code>MEMBER</code>) and granular permission flags (<code>can_add_item</code>, etc.).</li>
-<li><strong>WebSocket Security:</strong> System immediately disconnects users from all scopes if their account is deactivated or their membership is revoked.</li>
 </ul>
 <p><strong>Post-condition:</strong>  </p>
 <p>Absolute security and data isolation are maintained at both REST and WebSocket layers.</p>
