@@ -711,10 +711,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Key Rules:</strong>
-- <strong>Super Admin</strong>: Manages the tenant ecosystem and tenant admins; can only see Tenant Admin accounts, not regular users. Restricted from private shopping list data.
-- <strong>Tenant Admin</strong>: Full oversight of users and content within their organization. Cannot deactivate themselves.
-- <strong>User</strong>: Collaborative role; can only update/deactivate their own account. Cannot modify own <code>is_active</code> or <code>deleted_at</code> via update.</p>
+<p><strong>Key Rules:</strong></p>
+<ul>
+<li><strong>Super Admin</strong>: Manages the tenant ecosystem and tenant admins; can only see Tenant Admin accounts, not regular users. Restricted from private shopping list data.</li>
+<li><strong>Tenant Admin</strong>: Full oversight of users and content within their organization. Cannot deactivate themselves.</li>
+<li><strong>User</strong>: Collaborative role; can only update/deactivate their own account. Cannot modify own <code>is_active</code> or <code>deleted_at</code> via update.</li>
+</ul>
 <h4 id="shopping-list-management">Shopping List Management</h4>
 <table>
 <thead>
@@ -813,11 +815,13 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Key Rules:</strong>
-- <strong>Tenant Admin</strong>: Has elevated (override) access to all lists within their organization. Only role that can restore deleted lists and view deleted lists.
-- <strong>List Owner</strong>: Full control over list membership, settings, and deletion. Cannot restore deleted lists.
-- <strong>Members</strong>: Can only view the list and its members. Cannot modify list settings or manage other members.
-- <strong>Owner cannot be removed</strong> or have their permissions modified.</p>
+<p><strong>Key Rules:</strong></p>
+<ul>
+<li><strong>Tenant Admin</strong>: Has elevated (override) access to all lists within their organization. Only role that can restore deleted lists and view deleted lists.</li>
+<li><strong>List Owner</strong>: Full control over list membership, settings, and deletion. Cannot restore deleted lists.</li>
+<li><strong>Members</strong>: Can only view the list and its members. Cannot modify list settings or manage other members.</li>
+<li><strong>Owner cannot be removed</strong> or have their permissions modified.</li>
+</ul>
 <h4 id="item-management">Item Management</h4>
 <table>
 <thead>
@@ -873,12 +877,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Key Permission Flags:</strong>
-- <strong>can_view</strong>: Granted to all members by default. Required to view items.
-- <strong>can_add_item</strong>: Allows the member to contribute new items to the list.
-- <strong>can_update_item</strong>: Allows changing quantities, names, or marking items as purchased.
-- <strong>can_delete_item</strong>: Allows soft-deleting items from the list.
-- Purchased items <strong>cannot be updated</strong> (hard block regardless of permissions).</p>
+<p><strong>Key Permission Flags:</strong></p>
+<ul>
+<li><strong>can_view</strong>: Granted to all members by default. Required to view items.</li>
+<li><strong>can_add_item</strong>: Allows the member to contribute new items to the list.</li>
+<li><strong>can_update_item</strong>: Allows changing quantities, names, or marking items as purchased.</li>
+<li><strong>can_delete_item</strong>: Allows soft-deleting items from the list.</li>
+<li>Purchased items <strong>cannot be updated</strong> (hard block regardless of permissions).</li>
+</ul>
 <h4 id="invitations-access">Invitations &amp; Access</h4>
 <table>
 <thead>
@@ -942,10 +948,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Key Rules:</strong>
-- Cross-tenant invitations are blocked (token encodes <code>tenant_id</code>).
-- Cannot invite to or accept invites for deleted lists.
-- Duplicate membership and duplicate pending invite checks prevent spam.</p>
+<p><strong>Key Rules:</strong></p>
+<ul>
+<li>Cross-tenant invitations are blocked (token encodes <code>tenant_id</code>).</li>
+<li>Cannot invite to or accept invites for deleted lists.</li>
+<li>Duplicate membership and duplicate pending invite checks prevent spam.</li>
+</ul>
 <h4 id="real-time-communication-chat-notifications">Real-Time Communication (Chat &amp; Notifications)</h4>
 <table>
 <thead>
