@@ -381,17 +381,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-isolation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Isolation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#quick-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -706,17 +695,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-isolation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Isolation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#quick-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -863,14 +841,6 @@
 <ul>
 <li>Super Admins can delete a tenant.</li>
 <li><strong>Effect:</strong> Marks <code>deleted_at</code>, deactivates the tenant.</li>
-</ul>
-<hr />
-<h2 id="data-isolation">Data Isolation</h2>
-<p>MiniMart ensures absolute data isolation between organizations:</p>
-<ul>
-<li><strong>Scoped Queries:</strong> All service-layer operations automatically filter by <code>tenant_id</code>.</li>
-<li><strong>Identity Isolation:</strong> Users are unique within their tenant; cross-tenant authentication is strictly forbidden.</li>
-<li><strong>Resource Ownership:</strong> Shopping lists and items are strictly owned by a single tenant. No resource can be shared across tenant boundaries.</li>
 </ul>
 <hr />
 <h2 id="quick-reference">Quick Reference</h2>

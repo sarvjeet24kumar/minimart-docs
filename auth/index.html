@@ -393,17 +393,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#dependencies-middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies &amp; Middleware
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -729,17 +718,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#dependencies-middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies &amp; Middleware
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -852,19 +830,7 @@
 <ul>
 <li><strong>Access Token:</strong> Short-lived token used for API authorization. Contains <code>sub</code> (user_id), <code>tenant_id</code>, <code>role</code>, and <code>email</code>.</li>
 <li><strong>Refresh Token:</strong> Long-lived token used to obtain new access tokens.</li>
-<li><strong>Blacklisting:</strong> <ul>
-<li>On <strong>Logout</strong>, the access token JTI is added to a Redis-based blacklist.</li>
-<li>The refresh token is added to the <code>blacklisted_tokens</code> database table.</li>
 </ul>
-</li>
-</ul>
-<h3 id="dependencies-middleware">Dependencies &amp; Middleware</h3>
-<p>All protected routes use the <code>get_current_user</code> dependency, which:
-1. Extracts the JWT from the <code>Authorization: Bearer &lt;token&gt;</code> header.
-2. Validates the signature and expiration.
-3. Checks if the token JTI is in the Redis blacklist.
-4. Verifies the user and their associated tenant are both active.
-5. Injects the authenticated <code>User</code> model into the request context.</p>
 
 
 
