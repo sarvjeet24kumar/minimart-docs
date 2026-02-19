@@ -362,17 +362,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#use-case-7-secure-permission-real-time-enforcement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Case 7: Secure Permission &amp; Real-Time Enforcement
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -554,17 +543,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#use-case-7-secure-permission-real-time-enforcement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Case 7: Secure Permission &amp; Real-Time Enforcement
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -597,12 +575,6 @@
 <li>Upon verification, user logs in and system generates JWT tokens (Access &amp; Refresh).</li>
 <li><strong>Security Check:</strong> Middleware validates on every request that the user's <code>Tenant</code> is active and not soft-deleted.</li>
 </ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>User is registered, verified, and authenticated. All subsequent requests are scoped to their organization.</p>
-<p><strong>Exceptions:</strong>
-- Duplicate username/email for the same tenant.
-- Invalid or inactive Tenant-ID provided in header.
-- Password does not meet security requirements.</p>
 <hr />
 <h2 id="use-case-2-collaborative-shopping-list-management">Use Case 2: Collaborative Shopping List Management</h2>
 <p><strong>Description:</strong>  </p>
@@ -614,14 +586,6 @@
 <li>System generates a secure invitation token.</li>
 <li>Invited user accepts the invitation and is added as a <code>MEMBER</code>.</li>
 <li><strong>Real-time Sync:</strong> All members are notified of the new list or membership change via WebSockets.</li>
-</ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>A shared shopping list is established with specific members who can collaborate in real-time.</p>
-<p><strong>Exceptions:</strong></p>
-<ul>
-<li>Inviting a user from a different organization (Blocked by Tenant Isolation).</li>
-<li>Attempting to invite a user who is already a member.</li>
-<li>Invitation token expired or revoked.</li>
 </ul>
 <hr />
 <h2 id="use-case-3-item-tracking-status-synchronization">Use Case 3: Item Tracking &amp; Status Synchronization</h2>
@@ -635,13 +599,6 @@
 <li><strong>Real-time Sync:</strong> System broadcasts the change to all connected list subscribers immediately.</li>
 <li>System updates the <code>updated_at</code> timestamp and tracks the actor (last updated by).</li>
 </ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>The shopping list state is updated across all member devices simultaneously.</p>
-<p><strong>Exceptions:</strong></p>
-<ul>
-<li>Member lacks specific permission for adding/updating items.</li>
-<li>Item does not exist or has been deleted by another member.</li>
-</ul>
 <hr />
 <h2 id="use-case-4-real-time-collaborative-chat">Use Case 4: Real-Time Collaborative Chat</h2>
 <p><strong>Description:</strong> </p>
@@ -653,13 +610,6 @@
 <li>System persists the message to the database for history retrieval.</li>
 <li>System broadcasts the message to all members currently in the list's chat scope.</li>
 </ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>Instant communication is achieved, with history available for offline members.</p>
-<p><strong>Exceptions:</strong></p>
-<ul>
-<li>User is not a member of the list (Connection rejected).</li>
-<li>Message length exceeds the maximum limit (e.g., 2000 characters).</li>
-</ul>
 <hr />
 <h2 id="use-case-5-organization-administrative-management">Use Case 5: Organization Administrative Management</h2>
 <p><strong>Description:</strong>  </p>
@@ -668,15 +618,8 @@
 <ul>
 <li>Admin creates new user accounts for the organization.</li>
 <li>Admin manages user active/inactive status.</li>
-<li>Admin oversees all shopping lists within the tenant (Elevated access).</li>
-<li>Admin modifies list member permissions (Elevated override).</li>
-</ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>The organization's users and content are managed according to the administrator's actions.</p>
-<p><strong>Exceptions:</strong></p>
-<ul>
-<li>Admin attempts to access/manage data from other tenants (Blocked by Tenant Isolation).</li>
-<li>Admin attempts to delete the primary owner of a list without transferring ownership.</li>
+<li>Admin oversees all shopping lists within the tenant.</li>
+<li>Admin modifies list member permissions.</li>
 </ul>
 <hr />
 <h2 id="use-case-6-platform-level-supervision">Use Case 6: Platform-Level Supervision</h2>
@@ -689,31 +632,7 @@
 <li>Super Admin manages <code>TENANT_ADMIN</code> accounts globally.</li>
 <li>System provides cross-tenant health and readiness checks.</li>
 </ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>The platform ecosystem is maintained, and tenant lifecycles are controlled.</p>
-<p><strong>Exceptions:</strong></p>
-<ul>
-<li>Super Admin attempts to access PII (Private member data) within a tenant list (Limited by design).</li>
-<li>Attempting to reactive a tenant that has been significantly purged.</li>
-</ul>
 <hr />
-<h2 id="use-case-7-secure-permission-real-time-enforcement">Use Case 7: Secure Permission &amp; Real-Time Enforcement</h2>
-<p><strong>Description:</strong>  </p>
-<p>Ensures all resources are accessed by authenticated users with appropriate roles and tenant context.</p>
-<p><strong>Steps:</strong></p>
-<ul>
-<li><strong>Middleware Check:</strong> Every request validates the JWT, checks for blacklisted tokens, and refreshes Tenant/User status.</li>
-<li><strong>RBAC Enforcement:</strong> System checks platform roles (<code>USER</code>, <code>TENANT_ADMIN</code>, <code>SUPER_ADMIN</code>).</li>
-<li><strong>ABAC/List Enforcement:</strong> System checks list-level role (<code>OWNER</code>, <code>MEMBER</code>) and granular permission flags (<code>can_add_item</code>, etc.).</li>
-</ul>
-<p><strong>Post-condition:</strong>  </p>
-<p>Absolute security and data isolation are maintained at both REST and WebSocket layers.</p>
-<p><strong>Exceptions:</strong></p>
-<ul>
-<li>Access token is revoked (logged out) or expired.</li>
-<li>User account deactivated during an active session (Immediate kick).</li>
-<li>Tenant marked as inactive (Immediate block for all organization users).</li>
-</ul>
 
 
 
